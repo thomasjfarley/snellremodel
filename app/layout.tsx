@@ -34,8 +34,8 @@ const localBusinessSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://snelremodeling.com'),
   title: {
-    default: 'Snel Remodeling | Painting, Kitchen Remodels & Drywall',
-    template: '%s | Snel Remodeling',
+    default: 'Snel Remodeling Services | Painting, Kitchen Remodels & Drywall',
+    template: '%s | Snel Remodeling Services',
   },
   description:
     'Professional painting, kitchen remodels, and drywall services. Licensed and insured contractor. Get a free estimate today.',
@@ -51,15 +51,15 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    siteName: 'Snel Remodeling',
-    title: 'Snel Remodeling | Painting, Kitchen Remodels & Drywall',
+    siteName: 'Snel Remodeling Services',
+    title: 'Snel Remodeling Services | Painting, Kitchen Remodels & Drywall',
     description:
       'Professional painting, kitchen remodels, and drywall services. Get a free estimate today.',
     url: '/',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Snel Remodeling | Painting, Kitchen Remodels & Drywall',
+    title: 'Snel Remodeling Services | Painting, Kitchen Remodels & Drywall',
     description:
       'Professional painting, kitchen remodels, and drywall services. Get a free estimate today.',
   },
