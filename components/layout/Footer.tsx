@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-lg-4">
             <h2 className="h5 fw-bold mb-3">
-              Snell <span className="text-accent">Remodel</span>
+              Snel <span className="text-accent">Remodeling</span>
             </h2>
             <p className="text-white-50 small mb-3">
               Quality painting, kitchen remodels, and drywall services.
@@ -53,19 +53,19 @@ export default function Footer() {
               <li className="mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-telephone-fill text-accent" />
                 <a href={`tel:${process.env.NEXT_PUBLIC_PHONE}`}>
-                  {process.env.NEXT_PUBLIC_PHONE ?? '(555) 555-5555'}
+                  {process.env.NEXT_PUBLIC_PHONE ?? '(425) 524-1379'}
                 </a>
               </li>
               <li className="mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-envelope-fill text-accent" />
                 <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
-                  {process.env.NEXT_PUBLIC_EMAIL ?? 'contact@snellremodel.com'}
+                  {process.env.NEXT_PUBLIC_EMAIL ?? 'snelremodeling@gmail.com'}
                 </a>
               </li>
               <li className="d-flex align-items-start gap-2">
                 <i className="bi bi-geo-alt-fill text-accent mt-1" />
                 <span className="text-white-50">
-                  Serving {process.env.NEXT_PUBLIC_SERVICE_AREA ?? 'the greater [City] area'}
+                  Serving {process.env.NEXT_PUBLIC_SERVICE_AREA ?? 'Salt Lake County, UT'}
                 </span>
               </li>
             </ul>
@@ -79,7 +79,7 @@ export default function Footer() {
 
         <div className="d-flex flex-column flex-sm-row justify-content-between align-items-center text-white-50 small">
           <p className="mb-1 mb-sm-0">
-            &copy; {new Date().getFullYear()} Snell Remodel. All rights reserved.
+            &copy; {new Date().getFullYear()} Snel Remodeling Services. All rights reserved.
           </p>
           <p className="mb-0">Licensed &amp; Insured Contractor</p>
         </div>

@@ -5,7 +5,7 @@ import BookingCTA from '@/components/home/BookingCTA'
 export const metadata: Metadata = {
   title: 'Gallery',
   description:
-    'Browse before and after photos of our painting, kitchen remodel, and drywall projects. See the quality of Snell Remodel firsthand.',
+    "Browse before and after photos of our painting, kitchen remodel, and drywall projects. See the quality of Snel Remodeling Services firsthand.",
 }
 
 export default function GalleryPage() {

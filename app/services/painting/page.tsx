@@ -21,7 +21,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Painting Services',
-  provider: { '@type': 'LocalBusiness', name: 'Snell Remodel' },
+  provider: { '@type': 'LocalBusiness', name: 'Snel Remodeling Services' },
   description:
     'Professional interior and exterior painting, cabinet refinishing, and color consultation.',
   serviceType: 'Painting',

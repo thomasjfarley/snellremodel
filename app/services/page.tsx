@@ -5,7 +5,7 @@ import BookingCTA from '@/components/home/BookingCTA'
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    "Explore Snell Remodel's professional services: expert painting, kitchen remodels, and drywall. Licensed and insured contractor.",
+    "Explore Snel Remodeling's professional services: expert painting, kitchen remodels, and drywall. Licensed and insured contractor serving Salt Lake County, UT.",
 }
 
 const services = [
@@ -66,7 +66,7 @@ export default function ServicesPage() {
               <p className="text-accent fw-semibold text-uppercase ls-1 small mb-2">What We Offer</p>
               <h1 className="h1 fw-bold text-navy mb-3">Our Services</h1>
               <p className="text-muted fs-5">
-                Snell Remodel handles painting, kitchen remodels, and drywall with the same
+                Snel Remodeling handles painting, kitchen remodels, and drywall with the same
                 commitment to quality on every project — big or small.
               </p>
             </div>

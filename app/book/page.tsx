@@ -4,7 +4,7 @@ import BookingForm from '@/components/booking/BookingForm'
 export const metadata: Metadata = {
   title: 'Book a Walkthrough',
   description:
-    'Schedule a free walkthrough with Snell Remodel. Pick a time, describe your project, and get a detailed estimate. Quick and easy online booking.',
+    'Schedule a free walkthrough with Snel Remodeling Services. Pick a time, describe your project, and get a detailed estimate. Serving Salt Lake County, UT.',
 }
 
 export default function BookPage() {

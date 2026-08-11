@@ -21,7 +21,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Drywall Services',
-  provider: { '@type': 'LocalBusiness', name: 'Snell Remodel' },
+  provider: { '@type': 'LocalBusiness', name: 'Snel Remodeling Services' },
   description: 'Professional drywall installation, repair, texture matching, and skim coating.',
   serviceType: 'Drywall',
 }

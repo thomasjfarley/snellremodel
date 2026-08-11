@@ -20,7 +20,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Kitchen Remodeling',
-  provider: { '@type': 'LocalBusiness', name: 'Snell Remodel' },
+  provider: { '@type': 'LocalBusiness', name: 'Snel Remodeling Services' },
   description: 'Full kitchen renovations including cabinets, countertops, and layout changes.',
   serviceType: 'Kitchen Remodel',
 }

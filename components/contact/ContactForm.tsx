@@ -82,7 +82,7 @@ export default function ContactForm() {
             id="contact-phone"
             type="tel"
             className="form-control"
-            placeholder="(555) 555-5555"
+            placeholder="(425) 524-1379"
             {...register('phone')}
           />
         </div>

@@ -5,7 +5,7 @@ import BookingCTA from '@/components/home/BookingCTA'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Learn about Snell Remodel — a licensed and insured contractor with 10+ years of experience in painting, kitchen remodels, and drywall. Honest work, quality results.',
+    'Learn about Snel Remodeling Services — a licensed and insured contractor with 10+ years of experience in painting, kitchen remodels, and drywall. Serving Salt Lake County, UT.',
 }
 
 const values = [
@@ -22,7 +22,7 @@ export default function AboutPage() {
       <section className="bg-navy text-white py-5">
         <div className="container py-2">
           <p className="text-accent fw-semibold text-uppercase ls-1 small mb-2">Our Story</p>
-          <h1 className="display-5 fw-bold mb-3">About Snell Remodel</h1>
+          <h1 className="display-5 fw-bold mb-3">About Snel Remodeling</h1>
           <p className="text-white-50 fs-5 col-lg-6 mb-0">
             A contractor who takes pride in every project — big or small.
           </p>
@@ -37,10 +37,10 @@ export default function AboutPage() {
               <p className="text-accent fw-semibold text-uppercase ls-1 small mb-2">The Contractor</p>
               <h2 className="h2 fw-bold text-navy mb-4">Built on Honest Work</h2>
               <p className="text-muted mb-3">
-                Snell Remodel was built on a simple idea: do the job right and treat people
+                Snel Remodeling was built on a simple idea: do the job right and treat people
                 the way you want to be treated. With over 10 years of hands-on experience in
                 painting, kitchen remodels, and drywall, we have worked in hundreds of homes
-                and learned something from every one of them.
+                  across Salt Lake County and learned something from every one of them.
               </p>
               <p className="text-muted mb-3">
                 Painting is our specialty — it is what we are most passionate about, and it

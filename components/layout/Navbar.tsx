@@ -25,7 +25,7 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg bg-navy navbar-dark sticky-top shadow-sm">
         <div className="container">
           <Link href="/" className="navbar-brand text-white">
-            Snell <span className="text-accent">Remodel</span>
+            Snel <span className="text-accent">Remodeling</span>
           </Link>
 
           <button

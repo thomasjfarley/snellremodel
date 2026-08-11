@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const alt = 'Snell Remodel — Painting, Kitchen Remodels & Drywall'
+export const alt = 'Snel Remodeling Services — Painting, Kitchen Remodels & Drywall'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -78,7 +78,7 @@ export default function Image() {
               marginRight: 20,
             }}
           >
-            Snell
+            Snel
           </span>
           <span
             style={{
@@ -131,7 +131,7 @@ export default function Image() {
               }}
             />
             <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 22, display: 'flex' }}>
-              snellremodel.com
+              snelremodeling.com
             </span>
           </div>
 

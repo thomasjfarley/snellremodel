@@ -13,13 +13,13 @@ const fallbackReviews: Review[] = [
   {
     author: 'Sarah M.',
     rating: 5,
-    text: "Snell Remodel did an incredible job painting our entire home interior. The attention to detail was outstanding — clean lines, no drips, and they left everything spotless. Highly recommend.",
+    text: "Snel Remodeling did an incredible job painting our entire home interior. The attention to detail was outstanding — clean lines, no drips, and they left everything spotless. Highly recommend.",
     time: '2 months ago',
   },
   {
     author: 'James R.',
     rating: 5,
-    text: "We hired Snell to remodel our kitchen and couldn't be happier. Everything from the cabinets to the finishing work was done with real craftsmanship. Worth every penny.",
+    text: "We hired Snel Remodeling to remodel our kitchen and couldn't be happier. Everything from the cabinets to the finishing work was done with real craftsmanship. Worth every penny.",
     time: '3 months ago',
   },
   {

@@ -8,7 +8,7 @@ function getClient() {
   return new Resend(apiKey)
 }
 
-const FROM = process.env.RESEND_FROM_EMAIL ?? 'booking@snellremodel.com'
+const FROM = process.env.RESEND_FROM_EMAIL ?? 'booking@snelremodeling.com'
 const CONTRACTOR = process.env.RESEND_CONTRACTOR_EMAIL ?? process.env.NEXT_PUBLIC_EMAIL ?? ''
 
 export async function sendBookingEmails(data: BookingFormData): Promise<void> {
@@ -19,7 +19,7 @@ export async function sendBookingEmails(data: BookingFormData): Promise<void> {
   await resend.emails.send({
     from: FROM,
     to: data.email,
-    subject: `Walkthrough Confirmed — Snell Remodel`,
+    subject: `Walkthrough Confirmed — Snel Remodeling`,
     html: `
       <h2>Your walkthrough is confirmed!</h2>
       <p>Hi ${data.name},</p>
@@ -31,7 +31,7 @@ export async function sendBookingEmails(data: BookingFormData): Promise<void> {
       </table>
       ${data.notes ? `<p><strong>Your notes:</strong> ${data.notes}</p>` : ''}
       <p>We will be in touch if anything changes. See you soon!</p>
-      <p>— Snell Remodel</p>
+      <p>— Snel Remodeling Services</p>
     `,
   })
 
@@ -87,12 +87,12 @@ export async function sendContactEmail(data: ContactFormData): Promise<void> {
   await resend.emails.send({
     from: FROM,
     to: data.email,
-    subject: `Thanks for reaching out — Snell Remodel`,
+    subject: `Thanks for reaching out — Snel Remodeling`,
     html: `
       <p>Hi ${data.name},</p>
       <p>Thanks for getting in touch! We received your message and will get back to you shortly.</p>
-      <p>In the meantime, feel free to call us at ${process.env.NEXT_PUBLIC_PHONE ?? '(555) 555-5555'}.</p>
-      <p>— Snell Remodel</p>
+      <p>In the meantime, feel free to call us at ${process.env.NEXT_PUBLIC_PHONE ?? '(425) 524-1379'}.</p>
+      <p>— Snel Remodeling Services</p>
     `,
   })
 }

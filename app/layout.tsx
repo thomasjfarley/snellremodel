@@ -13,10 +13,10 @@ const inter = Inter({ subsets: ['latin'] })
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'Snell Remodel',
+  name: 'Snel Remodeling Services',
   description:
     'Professional painting, kitchen remodels, and drywall services. Licensed and insured contractor.',
-  url: 'https://snellremodel.com',
+  url: 'https://snelremodeling.com',
   telephone: process.env.NEXT_PUBLIC_PHONE,
   email: process.env.NEXT_PUBLIC_EMAIL,
   priceRange: '$$',
@@ -32,10 +32,10 @@ const localBusinessSchema = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://snellremodel.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://snelremodeling.com'),
   title: {
-    default: 'Snell Remodel | Painting, Kitchen Remodels & Drywall',
-    template: '%s | Snell Remodel',
+    default: 'Snel Remodeling | Painting, Kitchen Remodels & Drywall',
+    template: '%s | Snel Remodeling',
   },
   description:
     'Professional painting, kitchen remodels, and drywall services. Licensed and insured contractor. Get a free estimate today.',
@@ -51,15 +51,15 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: 'website',
-    siteName: 'Snell Remodel',
-    title: 'Snell Remodel | Painting, Kitchen Remodels & Drywall',
+    siteName: 'Snel Remodeling',
+    title: 'Snel Remodeling | Painting, Kitchen Remodels & Drywall',
     description:
       'Professional painting, kitchen remodels, and drywall services. Get a free estimate today.',
     url: '/',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Snell Remodel | Painting, Kitchen Remodels & Drywall',
+    title: 'Snel Remodeling | Painting, Kitchen Remodels & Drywall',
     description:
       'Professional painting, kitchen remodels, and drywall services. Get a free estimate today.',
   },

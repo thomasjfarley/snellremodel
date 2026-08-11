@@ -74,7 +74,7 @@ export default function BookingForm() {
         </p>
         <p className="text-muted small">
           Questions? Call us at{' '}
-          <a href={`tel:${process.env.NEXT_PUBLIC_PHONE}`}>{process.env.NEXT_PUBLIC_PHONE ?? '(555) 555-5555'}</a>
+          <a href={`tel:${process.env.NEXT_PUBLIC_PHONE}`}>{process.env.NEXT_PUBLIC_PHONE ?? '(425) 524-1379'}</a>
         </p>
       </div>
     )
@@ -267,7 +267,7 @@ export default function BookingForm() {
                 id="booking-phone"
                 type="tel"
                 className={`form-control${errors.phone ? ' is-invalid' : ''}`}
-                placeholder="(555) 555-5555"
+                placeholder="(425) 524-1379"
                 {...register('phone')}
               />
               {errors.phone && <div className="invalid-feedback">{errors.phone.message}</div>}

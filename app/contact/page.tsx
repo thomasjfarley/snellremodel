@@ -4,7 +4,7 @@ import ContactForm from '@/components/contact/ContactForm'
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Get in touch with Snell Remodel. Request a free estimate, ask a question, or schedule a walkthrough. We respond quickly.',
+    'Get in touch with Snel Remodeling Services. Request a free estimate, ask a question, or schedule a walkthrough. Serving Salt Lake County, UT.',
 }
 
 export default function ContactPage() {
@@ -39,7 +39,7 @@ export default function ContactPage() {
                         href={`tel:${process.env.NEXT_PUBLIC_PHONE}`}
                         className="text-muted text-decoration-none"
                       >
-                        {process.env.NEXT_PUBLIC_PHONE ?? '(555) 555-5555'}
+                        {process.env.NEXT_PUBLIC_PHONE ?? '(425) 524-1379'}
                       </a>
                     </div>
                   </div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
                         href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
                         className="text-muted text-decoration-none"
                       >
-                        {process.env.NEXT_PUBLIC_EMAIL ?? 'contact@snellremodel.com'}
+                        {process.env.NEXT_PUBLIC_EMAIL ?? 'snelremodeling@gmail.com'}
                       </a>
                     </div>
                   </div>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                     <div>
                       <p className="fw-semibold text-navy mb-0 small text-uppercase ls-1">Service Area</p>
                       <p className="text-muted mb-0">
-                        {process.env.NEXT_PUBLIC_SERVICE_AREA ?? 'the greater [City] area'}
+                        {process.env.NEXT_PUBLIC_SERVICE_AREA ?? 'Salt Lake County, UT'}
                       </p>
                     </div>
                   </div>
