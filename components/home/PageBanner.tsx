@@ -16,7 +16,7 @@ export default function PageBanner() {
               Quality Craftsmanship<br />You Can Trust
             </h1>
             <p className="text-white-50 fs-5 mb-4 pe-lg-4">
-              Expert painting, kitchen remodels, and drywall services delivered
+              Expert painting, remodeling, and drywall services delivered
               with precision and pride. Serving homeowners who expect the best.
             </p>
             <div className="d-flex gap-3 flex-wrap">

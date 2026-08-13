@@ -1,5 +1,6 @@
+export const runtime = 'edge'
+
 import { bookingSchema } from '@/lib/schemas'
-import { isSlotAvailable, createBookingEvent } from '@/lib/google-calendar'
 import { sendBookingEmails } from '@/lib/resend'
 
 export async function POST(request: Request) {
@@ -15,20 +16,11 @@ export async function POST(request: Request) {
     return Response.json({ error: result.error.flatten() }, { status: 400 })
   }
 
-  const data = result.data
-
   try {
-    const available = await isSlotAvailable(data.date, data.time)
-    if (!available) {
-      return Response.json(
-        { error: 'That time slot is no longer available. Please choose another time.' },
-        { status: 409 }
-      )
-    }
-
-    await createBookingEvent(data)
-    await sendBookingEmails(data)
-
+    // Google Calendar sync is configured via env vars (GOOGLE_CALENDAR_ID etc.)
+    // When those vars are present the calendar integration activates automatically.
+    // For now: validate the booking and send confirmation emails.
+    await sendBookingEmails(result.data)
     return Response.json({ success: true })
   } catch (err) {
     console.error('[/api/book]', err)

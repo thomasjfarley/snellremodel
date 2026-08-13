@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:preview": "npm run pages:build && wrangler pages dev",
+    "pages:deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^2.1.1",
@@ -22,6 +25,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const alt = 'Snel Remodeling Services — Painting, Kitchen Remodels & Drywall'
+export const alt = 'Snel Remodeling Services — Painting, Remodeling & Drywall'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -71,11 +71,11 @@ export default function Image() {
           <span
             style={{
               color: WHITE,
-              fontSize: 96,
+              fontSize: 72,
               fontWeight: 800,
               letterSpacing: '-0.02em',
               lineHeight: 1,
-              marginRight: 20,
+              marginRight: 16,
             }}
           >
             Snel
@@ -83,13 +83,13 @@ export default function Image() {
           <span
             style={{
               color: GOLD,
-              fontSize: 96,
+              fontSize: 72,
               fontWeight: 800,
               letterSpacing: '-0.02em',
               lineHeight: 1,
             }}
           >
-            Remodel
+            Remodeling Services
           </span>
         </div>
 
@@ -103,7 +103,7 @@ export default function Image() {
             display: 'flex',
           }}
         >
-          Painting · Kitchen Remodels · Drywall
+          Painting · Remodeling · Drywall
         </div>
 
         {/* Bottom row */}

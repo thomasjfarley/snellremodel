@@ -19,7 +19,7 @@ export async function sendBookingEmails(data: BookingFormData): Promise<void> {
   await resend.emails.send({
     from: FROM,
     to: data.email,
-    subject: `Walkthrough Confirmed — Snel Remodeling`,
+    subject: `Walkthrough Confirmed — Snel Remodeling Services`,
     html: `
       <h2>Your walkthrough is confirmed!</h2>
       <p>Hi ${data.name},</p>
@@ -87,7 +87,7 @@ export async function sendContactEmail(data: ContactFormData): Promise<void> {
   await resend.emails.send({
     from: FROM,
     to: data.email,
-    subject: `Thanks for reaching out — Snel Remodeling`,
+    subject: `Thanks for reaching out — Snel Remodeling Services`,
     html: `
       <p>Hi ${data.name},</p>
       <p>Thanks for getting in touch! We received your message and will get back to you shortly.</p>

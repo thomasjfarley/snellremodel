@@ -15,7 +15,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   name: 'Snel Remodeling Services',
   description:
-    'Professional painting, kitchen remodels, and drywall services. Licensed and insured contractor.',
+    'Professional painting, remodeling, and drywall services. Licensed and insured contractor.',
   url: 'https://snelremodeling.com',
   telephone: process.env.NEXT_PUBLIC_PHONE,
   email: process.env.NEXT_PUBLIC_EMAIL,
@@ -25,7 +25,7 @@ const localBusinessSchema = {
     name: 'Remodeling Services',
     itemListElement: [
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Painting' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Kitchen Remodel' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Remodeling' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Drywall' } },
     ],
   },
@@ -34,34 +34,35 @@ const localBusinessSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://snelremodeling.com'),
   title: {
-    default: 'Snel Remodeling Services | Painting, Kitchen Remodels & Drywall',
+    default: 'Snel Remodeling Services | Painting, Remodeling & Drywall',
     template: '%s | Snel Remodeling Services',
   },
   description:
-    'Professional painting, kitchen remodels, and drywall services. Licensed and insured contractor. Get a free estimate today.',
+    'Professional painting, remodeling, and drywall services. Licensed and insured contractor. Get a free estimate today.',
   keywords: [
     'painting contractor',
+    'home remodel',
     'kitchen remodel',
+    'bathroom remodel',
     'drywall',
     'interior painting',
     'exterior painting',
     'cabinet painting',
     'drywall repair',
-    'home remodel',
   ],
   openGraph: {
     type: 'website',
     siteName: 'Snel Remodeling Services',
-    title: 'Snel Remodeling Services | Painting, Kitchen Remodels & Drywall',
+    title: 'Snel Remodeling Services | Painting, Remodeling & Drywall',
     description:
-      'Professional painting, kitchen remodels, and drywall services. Get a free estimate today.',
+      'Professional painting, remodeling, and drywall services. Get a free estimate today.',
     url: '/',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Snel Remodeling Services | Painting, Kitchen Remodels & Drywall',
+    title: 'Snel Remodeling Services | Painting, Remodeling & Drywall',
     description:
-      'Professional painting, kitchen remodels, and drywall services. Get a free estimate today.',
+      'Professional painting, remodeling, and drywall services. Get a free estimate today.',
   },
   robots: { index: true, follow: true },
 }

@@ -4,43 +4,45 @@ import JsonLd from '@/components/JsonLd'
 import BookingCTA from '@/components/home/BookingCTA'
 
 export const metadata: Metadata = {
-  title: 'Kitchen Remodels',
+  title: 'Remodeling',
   description:
-    'Expert kitchen remodeling services: full gut renovations, cabinet installation, countertop replacement, and layout redesign. Free estimates available.',
+    'Professional remodeling services in Salt Lake County — kitchens, bathrooms, basements, and more. Full gut renovations to targeted upgrades. Free estimates available.',
   keywords: [
+    'remodeling contractor',
+    'home remodel',
     'kitchen remodel',
-    'kitchen renovation',
-    'cabinet installation',
-    'countertop replacement',
-    'kitchen contractor',
+    'bathroom remodel',
+    'basement remodel',
+    'room addition',
+    'Salt Lake County contractor',
   ],
 }
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Kitchen Remodeling',
+  name: 'Remodeling',
   provider: { '@type': 'LocalBusiness', name: 'Snel Remodeling Services' },
-  description: 'Full kitchen renovations including cabinets, countertops, and layout changes.',
-  serviceType: 'Kitchen Remodel',
+  description: 'Full home remodeling services including kitchens, bathrooms, basements, and custom renovations.',
+  serviceType: 'Home Remodeling',
 }
 
 const faqs = [
   {
-    q: 'How long does a kitchen remodel take?',
-    a: 'A minor update (countertops, hardware, paint) can take 1–2 weeks. A full gut renovation typically takes 4–8 weeks depending on scope, material lead times, and permits.',
+    q: 'What types of remodeling projects do you take on?',
+    a: 'Kitchens, bathrooms, basements, living spaces, and more. Whether it is a targeted upgrade or a full gut renovation, we assess each project individually and give you an honest recommendation.',
   },
   {
-    q: 'Do I need permits for a kitchen remodel?',
-    a: "It depends on the scope of work. Structural changes, electrical, and plumbing upgrades typically require permits. We'll advise you on what's needed for your project before we start.",
+    q: 'How long does a remodel take?',
+    a: 'It depends heavily on scope. A bathroom refresh might take 1–2 weeks. A full kitchen or basement renovation typically takes 4–8 weeks. We give you a realistic timeline upfront — not an optimistic one.',
   },
   {
-    q: 'Can you work with my existing cabinets?',
-    a: "Absolutely. We can reface, paint, or modify existing cabinets if they're structurally sound. This is often a great way to refresh your kitchen at a lower cost than full replacement.",
+    q: 'Do I need permits?',
+    a: "Structural changes, electrical, and plumbing upgrades typically require permits. We'll advise you on what's needed for your specific project before we start, so there are no surprises.",
   },
   {
     q: 'Can I stay in my home during the remodel?',
-    a: "For most kitchen remodels, yes — though you'll need to plan around limited kitchen access. We work efficiently and clean up each day to minimize disruption to your daily life.",
+    a: "In most cases, yes. We work efficiently, keep the job site clean each day, and communicate clearly so you always know what to expect. For major renovations we'll discuss the best approach during the walkthrough.",
   },
 ]
 
@@ -55,12 +57,12 @@ const faqSchema = {
 }
 
 const serviceItems = [
-  { icon: 'bi-house-door',   title: 'Full Kitchen Renovation',   desc: 'Complete gut renovations from floor to ceiling — new layout, cabinets, countertops, and finishes.' },
-  { icon: 'bi-grid',         title: 'Cabinet Installation',      desc: 'Custom and semi-custom cabinet installation with professional fitting, alignment, and hardware.' },
-  { icon: 'bi-square',       title: 'Countertop Replacement',    desc: 'Quartz, granite, laminate, or butcher block — we handle templating, fabrication coordination, and installation.' },
-  { icon: 'bi-arrows-move',  title: 'Layout Changes',            desc: 'Reimagine your kitchen flow. We can move walls, islands, and fixture locations to create the kitchen you actually want.' },
-  { icon: 'bi-lightbulb',    title: 'Fixture & Hardware Updates', desc: 'New faucets, lighting, handles, and pulls that tie the whole look together.' },
-  { icon: 'bi-brush',        title: 'Kitchen Painting',          desc: 'Fresh paint, cabinet refinishing, and color consultation to complete the transformation.' },
+  { icon: 'bi-house-door',   title: 'Kitchen Remodels',       desc: 'From cabinet refreshes to full gut renovations — new layouts, countertops, cabinetry, and finishes tailored to how you actually use your space.' },
+  { icon: 'bi-droplet',      title: 'Bathroom Remodels',      desc: 'Tile work, vanity replacement, shower and tub surrounds, and complete bathroom overhauls with quality materials that last.' },
+  { icon: 'bi-layers',       title: 'Basement Finishing',     desc: 'Turn an unfinished basement into livable, finished space — home office, rec room, guest suite, or whatever fits your lifestyle.' },
+  { icon: 'bi-arrows-move',  title: 'Layout Changes',         desc: 'Move walls, open up floor plans, or reconfigure rooms to better match how you live. We handle the structural and finish work.' },
+  { icon: 'bi-grid',         title: 'Cabinet Work',           desc: 'Custom and semi-custom cabinet installation, refacing, or painting — kitchens, bathrooms, built-ins, and more.' },
+  { icon: 'bi-wrench',       title: 'Targeted Upgrades',      desc: 'Not every project needs to be a full renovation. Countertop replacement, flooring, trim work, or fixture updates can transform a space on a focused budget.' },
 ]
 
 const process = [
@@ -70,7 +72,7 @@ const process = [
   { step: '04', title: 'Final Walkthrough', desc: 'We review every detail together before calling the job complete.' },
 ]
 
-export default function KitchenRemodelPage() {
+export default function RemodelingPage() {
   return (
     <>
       <JsonLd data={serviceSchema as Record<string, unknown>} />
@@ -87,13 +89,13 @@ export default function KitchenRemodelPage() {
               <li className="breadcrumb-item">
                 <Link href="/services" className="text-white-50 text-decoration-none">Services</Link>
               </li>
-              <li className="breadcrumb-item active text-accent" aria-current="page">Kitchen Remodels</li>
+              <li className="breadcrumb-item active text-accent" aria-current="page">Remodeling</li>
             </ol>
           </nav>
-          <h1 className="display-5 fw-bold mb-3">Kitchen Remodels</h1>
+          <h1 className="display-5 fw-bold mb-3">Remodeling</h1>
           <p className="text-white-50 fs-5 mb-4 col-lg-7">
-            From a simple cabinet refresh to a full gut renovation — we transform kitchens
-            into spaces you will actually want to spend time in.
+            Kitchens, bathrooms, basements, and beyond — we handle the full scope of residential
+            remodeling with the same care and precision on every project.
           </p>
           <Link href="/book" className="btn btn-accent btn-lg px-4">
             <i className="bi bi-calendar-check me-2" />Schedule a Free Walkthrough
@@ -106,9 +108,9 @@ export default function KitchenRemodelPage() {
         <div className="container">
           <div className="row mb-5">
             <div className="col-lg-6">
-              <p className="text-accent fw-semibold text-uppercase ls-1 small mb-2">What's Included</p>
-              <h2 className="h2 fw-bold text-navy mb-2">Kitchen Remodeling Services</h2>
-              <p className="text-muted">Every kitchen project is different. We tailor our approach to your goals and budget.</p>
+              <p className="text-accent fw-semibold text-uppercase ls-1 small mb-2">What We Do</p>
+              <h2 className="h2 fw-bold text-navy mb-2">Remodeling Services</h2>
+              <p className="text-muted">Every project is different. We tailor our approach to your goals, timeline, and budget.</p>
             </div>
           </div>
           <div className="row g-4">
@@ -157,7 +159,7 @@ export default function KitchenRemodelPage() {
                 <p className="text-accent fw-semibold text-uppercase ls-1 small mb-2">FAQ</p>
                 <h2 className="h2 fw-bold text-navy">Common Questions</h2>
               </div>
-              <div className="accordion" id="kitchenFaq">
+              <div className="accordion" id="remodelingFaq">
                 {faqs.map((faq, i) => (
                   <div key={i} className="accordion-item border-0 shadow-sm mb-2 rounded">
                     <h3 className="accordion-header">
@@ -165,16 +167,16 @@ export default function KitchenRemodelPage() {
                         className={`accordion-button fw-medium rounded${i !== 0 ? ' collapsed' : ''}`}
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target={`#faq-k-${i}`}
+                        data-bs-target={`#faq-r-${i}`}
                         aria-expanded={i === 0 ? 'true' : 'false'}
                       >
                         {faq.q}
                       </button>
                     </h3>
                     <div
-                      id={`faq-k-${i}`}
+                      id={`faq-r-${i}`}
                       className={`accordion-collapse collapse${i === 0 ? ' show' : ''}`}
-                      data-bs-parent="#kitchenFaq"
+                      data-bs-parent="#remodelingFaq"
                     >
                       <div className="accordion-body text-muted">{faq.a}</div>
                     </div>

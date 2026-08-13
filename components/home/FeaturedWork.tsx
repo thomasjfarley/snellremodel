@@ -1,10 +1,11 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const projects = [
-  { label: 'Interior Painting' },
-  { label: 'Kitchen Remodel' },
-  { label: 'Cabinet Painting' },
-  { label: 'Drywall Finish' },
+  { label: 'Interior Painting', img: '/images/painting-interior.jpg' },
+  { label: 'Remodeling',        img: '/images/kitchen-remodel.jpg' },
+  { label: 'Cabinet Painting',  img: '/images/painting-roller.jpg' },
+  { label: 'Drywall Finish',    img: '/images/drywall-construction.jpg' },
 ]
 
 export default function FeaturedWork() {
@@ -26,10 +27,19 @@ export default function FeaturedWork() {
         <div className="row g-3">
           {projects.map((p, i) => (
             <div key={i} className="col-6 col-lg-3">
-              <div className="img-placeholder ratio ratio-4x3 rounded-3 overflow-hidden">
-                <div className="d-flex flex-column align-items-center justify-content-center gap-2">
-                  <i className="bi bi-image fs-2 text-muted" />
-                  <span className="small text-muted fw-medium">{p.label}</span>
+              <div className="ratio ratio-4x3 rounded-3 overflow-hidden position-relative">
+                <Image
+                  src={p.img}
+                  alt={p.label}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-fit-cover"
+                />
+                <div
+                  className="position-absolute bottom-0 start-0 end-0 px-2 py-1"
+                  style={{ background: 'rgba(26,46,68,0.65)' }}
+                >
+                  <span className="text-white small fw-medium">{p.label}</span>
                 </div>
               </div>
             </div>

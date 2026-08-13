@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import BookingCTA from '@/components/home/BookingCTA'
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Learn about Snel Remodeling Services — a licensed and insured contractor with 10+ years of experience in painting, kitchen remodels, and drywall. Serving Salt Lake County, UT.',
+    'Learn about Snel Remodeling Services — a licensed and insured contractor with 10+ years of experience in painting, remodeling, and drywall. Serving Salt Lake County, UT.',
 }
 
 const values = [
@@ -22,9 +23,9 @@ export default function AboutPage() {
       <section className="bg-navy text-white py-5">
         <div className="container py-2">
           <p className="text-accent fw-semibold text-uppercase ls-1 small mb-2">Our Story</p>
-          <h1 className="display-5 fw-bold mb-3">About Snel Remodeling</h1>
+          <h1 className="display-5 fw-bold mb-3">About Snel Remodeling Services</h1>
           <p className="text-white-50 fs-5 col-lg-6 mb-0">
-            A contractor who takes pride in every project — big or small.
+            Owner-operated by Travis Snel — a contractor who takes pride in every project, big or small.
           </p>
         </div>
       </section>
@@ -37,20 +38,21 @@ export default function AboutPage() {
               <p className="text-accent fw-semibold text-uppercase ls-1 small mb-2">The Contractor</p>
               <h2 className="h2 fw-bold text-navy mb-4">Built on Honest Work</h2>
               <p className="text-muted mb-3">
-                Snel Remodeling was built on a simple idea: do the job right and treat people
-                the way you want to be treated. With over 10 years of hands-on experience in
-                painting, kitchen remodels, and drywall, we have worked in hundreds of homes
-                  across Salt Lake County and learned something from every one of them.
+                Snel Remodeling Services was founded by Travis Snel on a simple idea: do the
+                job right and treat people the way you want to be treated. With over 10 years
+                of hands-on experience in painting, remodeling, and drywall, Travis has
+                worked in hundreds of homes across Salt Lake County and learned something from
+                every one of them.
               </p>
               <p className="text-muted mb-3">
-                Painting is our specialty — it is what we are most passionate about, and it
-                shows in the results. Whether you need a single room refreshed or an entire
-                home repainted inside and out, we bring the same level of care and precision
-                to every coat.
+                Painting is his specialty and his passion — and it shows in the results.
+                Whether it is a single room refresh or a full interior and exterior repaint,
+                Travis brings the same level of care and precision to every coat.
               </p>
               <p className="text-muted mb-4">
-                We are a small operation by choice. Every project we take on gets our full
-                attention — you will not get handed off to a crew you have never met.
+                As the owner and operator, Travis personally handles every project from
+                walkthrough to final inspection. You will always know who is in your home —
+                and you can hold that person accountable.
               </p>
               <div className="d-flex gap-3 flex-wrap">
                 <div className="text-center">
@@ -70,11 +72,14 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="col-lg-6">
-              <div className="img-placeholder ratio ratio-4x3 rounded-3">
-                <div className="d-flex flex-column align-items-center justify-content-center gap-2">
-                  <i className="bi bi-person-circle fs-1 text-muted" />
-                  <span className="text-muted small fw-medium">Contractor photo</span>
-                </div>
+              <div className="ratio ratio-4x3 rounded-3 overflow-hidden position-relative">
+                <Image
+                  src="/images/contractor-worker.jpg"
+                  alt="Travis Snel — Owner, Snel Remodeling Services"
+                  fill
+                  sizes="(max-width: 992px) 100vw, 50vw"
+                  className="object-fit-cover"
+                />
               </div>
             </div>
           </div>

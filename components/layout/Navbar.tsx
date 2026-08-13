@@ -9,7 +9,7 @@ const navLinks: NavItem[] = [
     label: 'Services',
     children: [
       { href: '/services/painting', label: 'Painting' },
-      { href: '/services/kitchen-remodel', label: 'Kitchen Remodels' },
+      { href: '/services/remodeling', label: 'Remodeling' },
       { href: '/services/drywall', label: 'Drywall' },
       { href: '/services', label: 'All Services' },
     ],
@@ -25,7 +25,7 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg bg-navy navbar-dark sticky-top shadow-sm">
         <div className="container">
           <Link href="/" className="navbar-brand text-white">
-            Snel <span className="text-accent">Remodeling</span>
+            Snel <span className="text-accent">Remodeling Services</span>
           </Link>
 
           <button

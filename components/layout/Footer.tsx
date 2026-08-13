@@ -8,10 +8,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-lg-4">
             <h2 className="h5 fw-bold mb-3">
-              Snel <span className="text-accent">Remodeling</span>
+              Snel <span className="text-accent">Remodeling Services</span>
             </h2>
             <p className="text-white-50 small mb-3">
-              Quality painting, kitchen remodels, and drywall services.
+              Quality painting, remodeling, and drywall services.
               Licensed, insured, and dedicated to exceptional craftsmanship.
             </p>
             <p className="text-white-50 small mb-1">
@@ -29,7 +29,7 @@ export default function Footer() {
             <h3 className="h6 fw-semibold text-uppercase ls-1 text-white-50 mb-3">Services</h3>
             <ul className="list-unstyled mb-0 small">
               <li className="mb-2"><Link href="/services/painting">Painting</Link></li>
-              <li className="mb-2"><Link href="/services/kitchen-remodel">Kitchen Remodels</Link></li>
+              <li className="mb-2"><Link href="/services/remodeling">Remodeling</Link></li>
               <li className="mb-2"><Link href="/services/drywall">Drywall</Link></li>
               <li><Link href="/services">All Services</Link></li>
             </ul>

@@ -8,10 +8,10 @@ import { bookingSchema, type BookingFormData } from '@/lib/schemas'
 type Step = 1 | 2 | 3 | 4
 
 const services = [
-  { value: 'painting',        label: 'Painting',        icon: 'bi-brush' },
-  { value: 'kitchen-remodel', label: 'Kitchen Remodel', icon: 'bi-house-heart' },
-  { value: 'drywall',         label: 'Drywall',         icon: 'bi-grid-3x3' },
-  { value: 'other',           label: 'Other / Not Sure',icon: 'bi-question-circle' },
+  { value: 'painting',    label: 'Painting',        icon: 'bi-brush' },
+  { value: 'remodeling',  label: 'Remodeling',      icon: 'bi-house-heart' },
+  { value: 'drywall',     label: 'Drywall',         icon: 'bi-grid-3x3' },
+  { value: 'other',       label: 'Other / Not Sure',icon: 'bi-question-circle' },
 ] as const
 
 const timeSlots = ['8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM']

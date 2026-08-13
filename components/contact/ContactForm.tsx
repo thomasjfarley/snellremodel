@@ -92,7 +92,7 @@ export default function ContactForm() {
           <select id="contact-service" className="form-select" {...register('service')}>
             <option value="">Select a service…</option>
             <option value="painting">Painting</option>
-            <option value="kitchen-remodel">Kitchen Remodel</option>
+            <option value="remodeling">Remodeling</option>
             <option value="drywall">Drywall</option>
             <option value="other">Other / Not Sure</option>
           </select>
