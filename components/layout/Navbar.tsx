@@ -26,7 +26,6 @@ const serviceGroups = [
 
 export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
-  const [mobileOpenGroup, setMobileOpenGroup] = useState<string | null>(null)
 
   return (
     <header>
@@ -93,28 +92,21 @@ export default function Navbar() {
                   <div className="d-lg-none ps-3 pb-2">
                     {serviceGroups.map((group) => (
                       <div key={group.label} className="mb-1">
-                        <button
-                          className="btn btn-link text-white-50 text-decoration-none small fw-semibold text-uppercase p-0 py-1 d-flex align-items-center gap-2"
-                          style={{ letterSpacing: '0.08em', fontSize: '0.72rem' }}
-                          onClick={() => setMobileOpenGroup(mobileOpenGroup === group.label ? null : group.label)}
-                        >
-                          <i className={`bi bi-chevron-${mobileOpenGroup === group.label ? 'down' : 'right'} small`} />
+                        <p className="text-accent small fw-semibold text-uppercase mb-1" style={{ letterSpacing: '0.08em', fontSize: '0.72rem' }}>
                           {group.label}
-                        </button>
-                        {mobileOpenGroup === group.label && (
-                          <div className="ps-3">
-                            {group.items.map((item) => (
-                              <Link key={item.href} href={item.href} className="d-block text-white-50 small py-1 text-decoration-none">
-                                {item.label}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
+                        </p>
+                        <div className="ps-2">
+                          {group.items.map((item) => (
+                            <Link key={item.href} href={item.href} className="d-block text-white-50 small py-1 text-decoration-none">
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     ))}
-                    <Link href="/services/demo" className="d-block text-white small py-1 text-decoration-none fw-semibold mt-1">
-                      Demo
-                    </Link>
+                    <p className="text-accent small fw-semibold text-uppercase mb-0 mt-1" style={{ letterSpacing: '0.08em', fontSize: '0.72rem' }}>
+                      <Link href="/services/demo" className="text-accent text-decoration-none">Demo</Link>
+                    </p>
                   </div>
                 )}
               </li>
