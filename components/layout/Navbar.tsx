@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 
 const serviceGroups = [
   {
@@ -26,6 +26,15 @@ const serviceGroups = [
 
 export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+
+  const closeMenu = useCallback(() => {
+    setMobileServicesOpen(false)
+    // Collapse the Bootstrap navbar on mobile
+    const nav = document.getElementById('mainNav')
+    if (nav?.classList.contains('show')) {
+      nav.classList.remove('show')
+    }
+  }, [])
 
   return (
     <header>
@@ -97,28 +106,28 @@ export default function Navbar() {
                         </p>
                         <div className="ps-2">
                           {group.items.map((item) => (
-                            <Link key={item.href} href={item.href} className="d-block text-white-50 small py-1 text-decoration-none">
+                            <Link key={item.href} href={item.href} onClick={closeMenu} className="d-block text-white-50 small py-1 text-decoration-none">
                               {item.label}
                             </Link>
                           ))}
                         </div>
                       </div>
                     ))}
-                    <p className="text-accent small fw-semibold text-uppercase mb-0 mt-1" style={{ letterSpacing: '0.08em', fontSize: '0.72rem' }}>
-                      <Link href="/services/demo" className="text-accent text-decoration-none">Demo</Link>
-                    </p>
+                    <Link href="/services/demo" onClick={closeMenu} className="d-block text-white small fw-medium py-1 text-decoration-none mt-1">
+                      Demo
+                    </Link>
                   </div>
                 )}
               </li>
 
               <li className="nav-item">
-                <Link href="/gallery" className="nav-link text-white">Gallery</Link>
+                <Link href="/gallery" onClick={closeMenu} className="nav-link text-white">Gallery</Link>
               </li>
               <li className="nav-item">
-                <Link href="/about" className="nav-link text-white">About</Link>
+                <Link href="/about" onClick={closeMenu} className="nav-link text-white">About</Link>
               </li>
               <li className="nav-item">
-                <Link href="/contact" className="nav-link text-white">Contact</Link>
+                <Link href="/contact" onClick={closeMenu} className="nav-link text-white">Contact</Link>
               </li>
             </ul>
 
