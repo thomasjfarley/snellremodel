@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import JsonLd from '@/components/JsonLd'
 import BookingCTA from '@/components/home/BookingCTA'
@@ -11,6 +12,7 @@ type ServiceItem = {
   icon: string
   title: string
   desc: string
+  img?: string
 }
 
 type ProcessStep = {
@@ -108,8 +110,18 @@ export default function ServiceDetailPage({
             {serviceItems.map((item) => (
               <div key={item.title} className="col-md-6 col-lg-4">
                 <div className="d-flex gap-3">
-                  <div className="service-icon bg-navy bg-opacity-10 flex-shrink-0">
-                    <i className={`bi ${item.icon} text-navy fs-5`} />
+                  <div className="service-icon bg-navy bg-opacity-10 flex-shrink-0" style={{ overflow: 'hidden' }}>
+                    {item.img ? (
+                      <Image
+                        src={item.img}
+                        alt={item.title}
+                        width={52}
+                        height={52}
+                        style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: 10 }}
+                      />
+                    ) : (
+                      <i className={`bi ${item.icon} text-navy fs-5`} />
+                    )}
                   </div>
                   <div>
                     <h3 className="h6 fw-bold text-navy mb-1">{item.title}</h3>

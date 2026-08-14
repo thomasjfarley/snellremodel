@@ -12,6 +12,7 @@ export type ServiceItem = {
   icon: string
   title: string
   desc: string
+  img?: string
 }
 
 export type ProcessStep = {
@@ -220,12 +221,12 @@ export const kitchenContent: ServiceDetailContent = {
     'We handle targeted kitchen upgrades and full remodels with careful planning, clean execution, and durable finishes.',
   ctaLabel: 'Schedule a Free Walkthrough',
   serviceItems: [
-    { icon: 'bi-grid', title: 'Cabinet Installation', desc: 'New cabinets, refacing plans, and storage upgrades that improve function and keep the kitchen organized.' },
-    { icon: 'bi-bounding-box', title: 'Countertop Upgrades', desc: 'Replace worn tops with durable surfaces sized, templated, and installed for a clean finished fit.' },
-    { icon: 'bi-arrows-move', title: 'Layout Changes', desc: 'Rework traffic flow, island placement, and work zones so the space feels more open and usable.' },
-    { icon: 'bi-plug', title: 'Appliance Integration', desc: 'Prep for new ranges, refrigerators, dishwashers, and venting with coordinated electrical and finish work.' },
-    { icon: 'bi-lightbulb', title: 'Lighting & Fixtures', desc: 'Update pendants, under-cabinet lighting, plumbing fixtures, and other details that sharpen the finished look.' },
-    { icon: 'bi-brush', title: 'Trim & Finishes', desc: 'Backsplashes, paint touchups, trim details, and punch-list work that make the remodel feel complete.' },
+    { icon: 'bi-grid', title: 'Cabinet Installation', desc: 'New cabinets, refacing plans, and storage upgrades that improve function and keep the kitchen organized.', img: '/images/kitchen-cabinets.jpg' },
+    { icon: 'bi-bounding-box', title: 'Countertop Upgrades', desc: 'Replace worn tops with durable surfaces sized, templated, and installed for a clean finished fit.', img: '/images/kitchen-modern.jpg' },
+    { icon: 'bi-arrows-move', title: 'Layout Changes', desc: 'Rework traffic flow, island placement, and work zones so the space feels more open and usable.', img: '/images/kitchen-remodel.jpg' },
+    { icon: 'bi-plug', title: 'Appliance Integration', desc: 'Prep for new ranges, refrigerators, dishwashers, and venting with coordinated electrical and finish work.', img: '/images/kitchen-remodel.jpg' },
+    { icon: 'bi-lightbulb', title: 'Lighting & Fixtures', desc: 'Update pendants, under-cabinet lighting, plumbing fixtures, and other details that sharpen the finished look.', img: '/images/kitchen-modern.jpg' },
+    { icon: 'bi-brush', title: 'Trim & Finishes', desc: 'Backsplashes, paint touchups, trim details, and punch-list work that make the remodel feel complete.', img: '/images/kitchen-cabinets.jpg' },
   ],
   process: [
     { step: '01', title: 'Walkthrough & Goals', desc: 'We review how you use the kitchen now and what needs to change for the remodel to pay off.' },
@@ -264,12 +265,12 @@ export const bathroomContent: ServiceDetailContent = {
     'From compact hall baths to primary suites, we build bathroom remodels that improve comfort, storage, and long-term performance.',
   ctaLabel: 'Schedule a Free Walkthrough',
   serviceItems: [
-    { icon: 'bi-grid-3x3-gap', title: 'Tile Installation', desc: 'Floor, shower, and backsplash tile installed with straight lines, clean transitions, and durable setting materials.' },
-    { icon: 'bi-columns-gap', title: 'Vanity & Storage', desc: 'Replace dated vanities, mirrors, and storage so the room works better and looks more polished.' },
-    { icon: 'bi-droplet', title: 'Shower & Tub Updates', desc: 'New surrounds, shower conversions, and tub updates that improve function and visual impact.' },
-    { icon: 'bi-lightbulb', title: 'Fixture Replacements', desc: 'Install updated faucets, lighting, hardware, and accessories that tie the remodel together.' },
-    { icon: 'bi-square-half', title: 'Flooring & Trim', desc: 'Water-resistant flooring, base, casing, and finish trim selected to hold up in high-moisture spaces.' },
-    { icon: 'bi-wind', title: 'Ventilation & Finishes', desc: 'Better exhaust, moisture-resistant finishes, and final paint details that protect the room over time.' },
+    { icon: 'bi-grid-3x3-gap', title: 'Tile Installation', desc: 'Floor, shower, and backsplash tile installed with straight lines, clean transitions, and durable setting materials.', img: '/images/bathroom-remodel.jpg' },
+    { icon: 'bi-columns-gap', title: 'Vanity & Storage', desc: 'Replace dated vanities, mirrors, and storage so the room works better and looks more polished.', img: '/images/bathroom-remodel.jpg' },
+    { icon: 'bi-droplet', title: 'Shower & Tub Updates', desc: 'New surrounds, shower conversions, and tub updates that improve function and visual impact.', img: '/images/bathroom-remodel.jpg' },
+    { icon: 'bi-lightbulb', title: 'Fixture Replacements', desc: 'Install updated faucets, lighting, hardware, and accessories that tie the remodel together.', img: '/images/bathroom-remodel.jpg' },
+    { icon: 'bi-square-half', title: 'Flooring & Trim', desc: 'Water-resistant flooring, base, casing, and finish trim selected to hold up in high-moisture spaces.', img: '/images/bathroom-remodel.jpg' },
+    { icon: 'bi-wind', title: 'Ventilation & Finishes', desc: 'Better exhaust, moisture-resistant finishes, and final paint details that protect the room over time.', img: '/images/bathroom-remodel.jpg' },
   ],
   process: [
     { step: '01', title: 'On-Site Review', desc: 'We assess layout, moisture-prone areas, and the upgrades that will make the bathroom more comfortable.' },
@@ -308,12 +309,12 @@ export const basementContent: ServiceDetailContent = {
     'We help homeowners unlock more square footage with practical basement finishing built around comfort, access, and long-term use.',
   ctaLabel: 'Schedule a Free Walkthrough',
   serviceItems: [
-    { icon: 'bi-layout-three-columns', title: 'Framing & Layout', desc: 'Build rooms, storage zones, and open living areas with a layout that makes the basement feel intentional.' },
-    { icon: 'bi-shield-check', title: 'Insulation Planning', desc: 'Improve comfort with basement wall and ceiling prep that supports a more finished, livable environment.' },
-    { icon: 'bi-grid-3x3', title: 'Drywall & Texture', desc: 'Hang, finish, and texture walls and ceilings so the basement blends with the rest of your home.' },
-    { icon: 'bi-grid-3x2-gap', title: 'Flooring Installation', desc: 'Install flooring suited to basement conditions, from LVP to carpet and other durable finished surfaces.' },
-    { icon: 'bi-door-open', title: 'Egress Considerations', desc: 'Plan around bedroom conversions and access requirements so the finished space is safe and functional.' },
-    { icon: 'bi-lightbulb', title: 'Trim & Lighting', desc: 'Add baseboards, doors, recessed lighting, and finishing touches that make the space feel move-in ready.' },
+    { icon: 'bi-layout-three-columns', title: 'Framing & Layout', desc: 'Build rooms, storage zones, and open living areas with a layout that makes the basement feel intentional.', img: '/images/drywall-construction.jpg' },
+    { icon: 'bi-shield-check', title: 'Insulation Planning', desc: 'Improve comfort with basement wall and ceiling prep that supports a more finished, livable environment.', img: '/images/drywall-construction.jpg' },
+    { icon: 'bi-grid-3x3', title: 'Drywall & Texture', desc: 'Hang, finish, and texture walls and ceilings so the basement blends with the rest of your home.', img: '/images/drywall-install.jpg' },
+    { icon: 'bi-grid-3x2-gap', title: 'Flooring Installation', desc: 'Install flooring suited to basement conditions, from LVP to carpet and other durable finished surfaces.', img: '/images/kitchen-modern.jpg' },
+    { icon: 'bi-door-open', title: 'Egress Considerations', desc: 'Plan around bedroom conversions and access requirements so the finished space is safe and functional.', img: '/images/drywall-construction.jpg' },
+    { icon: 'bi-lightbulb', title: 'Trim & Lighting', desc: 'Add baseboards, doors, recessed lighting, and finishing touches that make the space feel move-in ready.', img: '/images/drywall-ceiling.jpg' },
   ],
   process: [
     { step: '01', title: 'Space Assessment', desc: 'We review the basement layout, ceiling height, utilities, and the best use for the available square footage.' },
@@ -352,12 +353,12 @@ export const bedroomContent: ServiceDetailContent = {
     'We remodel bedrooms to create better storage, smoother layouts, and cleaner finishes without overcomplicating the project.',
   ctaLabel: 'Schedule a Free Walkthrough',
   serviceItems: [
-    { icon: 'bi-door-closed', title: 'Closet Builds', desc: 'Build or rework closet storage so the room feels less cluttered and more functional.' },
-    { icon: 'bi-arrows-angle-expand', title: 'Layout Adjustments', desc: 'Shift walls, openings, or room flow when a better layout makes the space more usable.' },
-    { icon: 'bi-border-width', title: 'Trim & Millwork', desc: 'Upgrade baseboards, casing, accent trim, and other finish carpentry that sharpens the room.' },
-    { icon: 'bi-grid-1x2', title: 'Flooring Updates', desc: 'Install flooring that fits the room and ties it visually to adjacent spaces in the home.' },
-    { icon: 'bi-lightbulb', title: 'Lighting Changes', desc: 'Add better fixture placement, switches, and lighting upgrades that improve comfort and function.' },
-    { icon: 'bi-brush', title: 'Paint & Finish Work', desc: 'Complete the remodel with smooth walls, crisp lines, and final paint details that elevate the room.' },
+    { icon: 'bi-door-closed', title: 'Closet Builds', desc: 'Build or rework closet storage so the room feels less cluttered and more functional.', img: '/images/painting-interior.jpg' },
+    { icon: 'bi-arrows-angle-expand', title: 'Layout Adjustments', desc: 'Shift walls, openings, or room flow when a better layout makes the space more usable.', img: '/images/painting-room.jpg' },
+    { icon: 'bi-border-width', title: 'Trim & Millwork', desc: 'Upgrade baseboards, casing, accent trim, and other finish carpentry that sharpens the room.', img: '/images/painting-interior.jpg' },
+    { icon: 'bi-grid-1x2', title: 'Flooring Updates', desc: 'Install flooring that fits the room and ties it visually to adjacent spaces in the home.', img: '/images/kitchen-modern.jpg' },
+    { icon: 'bi-lightbulb', title: 'Lighting Changes', desc: 'Add better fixture placement, switches, and lighting upgrades that improve comfort and function.', img: '/images/painting-room.jpg' },
+    { icon: 'bi-brush', title: 'Paint & Finish Work', desc: 'Complete the remodel with smooth walls, crisp lines, and final paint details that elevate the room.', img: '/images/painting-accent-wall.jpg' },
   ],
   process: [
     { step: '01', title: 'Room Walkthrough', desc: 'We identify storage issues, layout limitations, and the finish upgrades that will have the biggest impact.' },
@@ -396,12 +397,12 @@ export const flooringContent: ServiceDetailContent = {
     'We handle flooring upgrades room by room or as part of a larger remodel, always with attention to prep and finish details.',
   ctaLabel: 'Schedule a Free Walkthrough',
   serviceItems: [
-    { icon: 'bi-tree', title: 'Hardwood Flooring', desc: 'Install hardwood floors that bring warmth and long-term value to living spaces, bedrooms, and hallways.' },
-    { icon: 'bi-grid', title: 'LVP Installation', desc: 'Luxury vinyl plank floors installed for durability, water resistance, and a clean modern finish.' },
-    { icon: 'bi-grid-3x3-gap', title: 'Tile Flooring', desc: 'Tile floors laid with proper spacing, transitions, and substrate prep for bathrooms, kitchens, and entries.' },
-    { icon: 'bi-square', title: 'Carpet Installation', desc: 'Soft-surface flooring installed for comfort in bedrooms, basements, and other lower-traffic spaces.' },
-    { icon: 'bi-hammer', title: 'Subfloor Preparation', desc: 'Leveling, patching, and prep work that helps finished floors perform better and last longer.' },
-    { icon: 'bi-border-style', title: 'Transitions & Base', desc: 'Clean edges, transition strips, and base trim details that make the installation look complete.' },
+    { icon: 'bi-tree', title: 'Hardwood Flooring', desc: 'Install hardwood floors that bring warmth and long-term value to living spaces, bedrooms, and hallways.', img: '/images/kitchen-modern.jpg' },
+    { icon: 'bi-grid', title: 'LVP Installation', desc: 'Luxury vinyl plank floors installed for durability, water resistance, and a clean modern finish.', img: '/images/kitchen-modern.jpg' },
+    { icon: 'bi-grid-3x3-gap', title: 'Tile Flooring', desc: 'Tile floors laid with proper spacing, transitions, and substrate prep for bathrooms, kitchens, and entries.', img: '/images/bathroom-remodel.jpg' },
+    { icon: 'bi-square', title: 'Carpet Installation', desc: 'Soft-surface flooring installed for comfort in bedrooms, basements, and other lower-traffic spaces.', img: '/images/painting-interior.jpg' },
+    { icon: 'bi-hammer', title: 'Subfloor Preparation', desc: 'Leveling, patching, and prep work that helps finished floors perform better and last longer.', img: '/images/drywall-construction.jpg' },
+    { icon: 'bi-border-style', title: 'Transitions & Base', desc: 'Clean edges, transition strips, and base trim details that make the installation look complete.', img: '/images/kitchen-modern.jpg' },
   ],
   process: [
     { step: '01', title: 'Measure & Inspect', desc: 'We review the space, existing floor conditions, and the right material for the rooms being updated.' },
@@ -440,12 +441,12 @@ export const paintContent: ServiceDetailContent = {
     'We handle every type of painting project with the same level of care, prep, and finish quality.',
   ctaLabel: 'Get a Free Estimate',
   serviceItems: [
-    { icon: 'bi-house', title: 'Interior Painting', desc: 'Walls, ceilings, trim, and doors painted to a professional standard with careful prep and protection.' },
-    { icon: 'bi-sun', title: 'Exterior Painting', desc: 'Weather-ready finishes that protect siding, trim, and other exterior surfaces while boosting curb appeal.' },
-    { icon: 'bi-grid', title: 'Cabinet Painting', desc: 'Refresh kitchen and bathroom cabinets with a durable process that delivers a clean, updated look.' },
-    { icon: 'bi-palette', title: 'Color Consultation', desc: 'Get help choosing colors that fit your lighting, materials, and the style of your home.' },
-    { icon: 'bi-columns', title: 'Accent Walls', desc: 'Add contrast, depth, or personality with accent wall planning and precise finish work.' },
-    { icon: 'bi-building', title: 'Commercial Painting', desc: 'Professional painting for offices, retail spaces, and light commercial interiors on a practical schedule.' },
+    { icon: 'bi-house', title: 'Interior Painting', desc: 'Walls, ceilings, trim, and doors painted to a professional standard with careful prep and protection.', img: '/images/painting-room.jpg' },
+    { icon: 'bi-sun', title: 'Exterior Painting', desc: 'Weather-ready finishes that protect siding, trim, and other exterior surfaces while boosting curb appeal.', img: '/images/home-exterior.jpg' },
+    { icon: 'bi-grid', title: 'Cabinet Painting', desc: 'Refresh kitchen and bathroom cabinets with a durable process that delivers a clean, updated look.', img: '/images/kitchen-cabinets.jpg' },
+    { icon: 'bi-palette', title: 'Color Consultation', desc: 'Get help choosing colors that fit your lighting, materials, and the style of your home.', img: '/images/painting-interior.jpg' },
+    { icon: 'bi-columns', title: 'Accent Walls', desc: 'Add contrast, depth, or personality with accent wall planning and precise finish work.', img: '/images/painting-accent-wall.jpg' },
+    { icon: 'bi-building', title: 'Commercial Painting', desc: 'Professional painting for offices, retail spaces, and light commercial interiors on a practical schedule.', img: '/images/painting-roller.jpg' },
   ],
   process: [
     { step: '01', title: 'Walkthrough & Scope', desc: 'We inspect surfaces, discuss colors, and identify the prep work needed for a sharp finished result.' },
@@ -484,12 +485,12 @@ export const drywallContent: ServiceDetailContent = {
     'From hairline cracks to full-room installs, we handle drywall work of every size with an eye for invisible repairs.',
   ctaLabel: 'Get a Free Estimate',
   serviceItems: [
-    { icon: 'bi-plus-square', title: 'New Installation', desc: 'Full drywall installation for room conversions, additions, and new framed spaces.' },
-    { icon: 'bi-tools', title: 'Drywall Repair', desc: 'Repair holes, cracks, and damaged areas so they blend into the surrounding wall or ceiling.' },
-    { icon: 'bi-droplet', title: 'Water Damage Repair', desc: 'Replace affected drywall after leaks or flooding and prep the surface for texture and paint.' },
-    { icon: 'bi-grid-3x3-gap', title: 'Texture Matching', desc: 'Match orange peel, knockdown, skip trowel, and other existing wall textures as closely as possible.' },
-    { icon: 'bi-layers', title: 'Skim Coating', desc: 'Smooth rough or dated surfaces with skim coating for a cleaner, more modern finished wall.' },
-    { icon: 'bi-square', title: 'Ceiling Work', desc: 'Install and repair ceiling drywall, including texture repair and smoothing for damaged areas.' },
+    { icon: 'bi-plus-square', title: 'New Installation', desc: 'Full drywall installation for room conversions, additions, and new framed spaces.', img: '/images/drywall-install.jpg' },
+    { icon: 'bi-tools', title: 'Drywall Repair', desc: 'Repair holes, cracks, and damaged areas so they blend into the surrounding wall or ceiling.', img: '/images/drywall-construction.jpg' },
+    { icon: 'bi-droplet', title: 'Water Damage Repair', desc: 'Replace affected drywall after leaks or flooding and prep the surface for texture and paint.', img: '/images/drywall-install.jpg' },
+    { icon: 'bi-grid-3x3-gap', title: 'Texture Matching', desc: 'Match orange peel, knockdown, skip trowel, and other existing wall textures as closely as possible.', img: '/images/drywall-construction.jpg' },
+    { icon: 'bi-layers', title: 'Skim Coating', desc: 'Smooth rough or dated surfaces with skim coating for a cleaner, more modern finished wall.', img: '/images/drywall-ceiling.jpg' },
+    { icon: 'bi-square', title: 'Ceiling Work', desc: 'Install and repair ceiling drywall, including texture repair and smoothing for damaged areas.', img: '/images/drywall-ceiling.jpg' },
   ],
   process: [
     { step: '01', title: 'Inspect the Damage', desc: 'We look at the repair area, identify the extent of the work, and note any conditions affecting the finish.' },
@@ -528,12 +529,12 @@ export const waterDamageContent: ServiceDetailContent = {
     'We help homeowners recover from interior water damage by removing compromised finishes and rebuilding the space cleanly.',
   ctaLabel: 'Get a Free Estimate',
   serviceItems: [
-    { icon: 'bi-search', title: 'Damage Assessment', desc: 'Review affected walls, ceilings, and finishes to understand the visible repair scope after the source is addressed.' },
-    { icon: 'bi-hammer', title: 'Selective Demo', desc: 'Remove damaged drywall, trim, and other compromised materials without disturbing more of the room than necessary.' },
-    { icon: 'bi-grid-3x3', title: 'Drywall Replacement', desc: 'Install new drywall where needed and prep the repaired areas for finishing and texture.' },
-    { icon: 'bi-bricks', title: 'Texture Restoration', desc: 'Recreate the surrounding wall or ceiling texture so new work blends with existing surfaces.' },
-    { icon: 'bi-brush', title: 'Prime & Paint', desc: 'Prime repaired areas and finish with paint so the room looks whole again once restoration is complete.' },
-    { icon: 'bi-house-check', title: 'Finish Coordination', desc: 'Reinstall trim and complete final detail work so the repaired space is ready to return to normal use.' },
+    { icon: 'bi-search', title: 'Damage Assessment', desc: 'Review affected walls, ceilings, and finishes to understand the visible repair scope after the source is addressed.', img: '/images/drywall-install.jpg' },
+    { icon: 'bi-hammer', title: 'Selective Demo', desc: 'Remove damaged drywall, trim, and other compromised materials without disturbing more of the room than necessary.', img: '/images/drywall-construction.jpg' },
+    { icon: 'bi-grid-3x3', title: 'Drywall Replacement', desc: 'Install new drywall where needed and prep the repaired areas for finishing and texture.', img: '/images/drywall-install.jpg' },
+    { icon: 'bi-bricks', title: 'Texture Restoration', desc: 'Recreate the surrounding wall or ceiling texture so new work blends with existing surfaces.', img: '/images/drywall-construction.jpg' },
+    { icon: 'bi-brush', title: 'Prime & Paint', desc: 'Prime repaired areas and finish with paint so the room looks whole again once restoration is complete.', img: '/images/painting-room.jpg' },
+    { icon: 'bi-house-check', title: 'Finish Coordination', desc: 'Reinstall trim and complete final detail work so the repaired space is ready to return to normal use.', img: '/images/drywall-ceiling.jpg' },
   ],
   process: [
     { step: '01', title: 'Review the Area', desc: 'We inspect the visible damage and confirm the affected space is ready for repair work to begin.' },
@@ -572,12 +573,12 @@ export const demoContent: ServiceDetailContent = {
     'We perform controlled interior demo work that clears the way for renovation while protecting the rest of your home.',
   ctaLabel: 'Schedule a Free Walkthrough',
   serviceItems: [
-    { icon: 'bi-house-dash', title: 'Interior Demo', desc: 'Remove walls, cabinets, flooring, and finishes that need to come out before remodeling can begin.' },
-    { icon: 'bi-scissors', title: 'Selective Demo', desc: 'Targeted demolition for kitchens, bathrooms, basements, and other spaces where only part of the room is changing.' },
-    { icon: 'bi-trash3', title: 'Debris Removal', desc: 'Haul away demolition debris so the site stays cleaner and the next phase of work can start faster.' },
-    { icon: 'bi-cone-striped', title: 'Site Preparation', desc: 'Prep the work area for framing, drywall, flooring, or finish crews after demolition is complete.' },
-    { icon: 'bi-shield', title: 'Dust & Surface Protection', desc: 'Use practical containment and protection measures to reduce mess in nearby areas of the home.' },
-    { icon: 'bi-layout-text-window', title: 'Remodel Readiness', desc: 'Leave the space stripped, organized, and ready for the next construction step without unnecessary delays.' },
+    { icon: 'bi-house-dash', title: 'Interior Demo', desc: 'Remove walls, cabinets, flooring, and finishes that need to come out before remodeling can begin.', img: '/images/drywall-construction.jpg' },
+    { icon: 'bi-scissors', title: 'Selective Demo', desc: 'Targeted demolition for kitchens, bathrooms, basements, and other spaces where only part of the room is changing.', img: '/images/drywall-install.jpg' },
+    { icon: 'bi-trash3', title: 'Debris Removal', desc: 'Haul away demolition debris so the site stays cleaner and the next phase of work can start faster.', img: '/images/contractor-worker.jpg' },
+    { icon: 'bi-cone-striped', title: 'Site Preparation', desc: 'Prep the work area for framing, drywall, flooring, or finish crews after demolition is complete.', img: '/images/contractor-worker.jpg' },
+    { icon: 'bi-shield', title: 'Dust & Surface Protection', desc: 'Use practical containment and protection measures to reduce mess in nearby areas of the home.', img: '/images/drywall-construction.jpg' },
+    { icon: 'bi-layout-text-window', title: 'Remodel Readiness', desc: 'Leave the space stripped, organized, and ready for the next construction step without unnecessary delays.', img: '/images/contractor-worker.jpg' },
   ],
   process: [
     { step: '01', title: 'Scope the Demo', desc: 'We identify what stays, what goes, and how to protect surrounding spaces before work begins.' },
