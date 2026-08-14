@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "npx @opennextjs/cloudflare build",
-    "pages:deploy": "npx @opennextjs/cloudflare build && wrangler pages deploy"
+    "pages:build": "npx @opennextjs/cloudflare build --openNextConfigPath ./open-next.config.ts",
+    "pages:deploy": "npx @opennextjs/cloudflare build --openNextConfigPath ./open-next.config.ts && wrangler pages deploy"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^2.1.1",
