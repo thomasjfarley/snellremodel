@@ -1,4 +1,3 @@
-export const runtime = 'edge'
 
 interface PlaceReview {
   author_name: string

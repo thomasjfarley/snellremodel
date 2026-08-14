@@ -1,4 +1,3 @@
-export const runtime = 'edge'
 
 import { bookingSchema } from '@/lib/schemas'
 import { sendBookingEmails } from '@/lib/resend'

@@ -1,4 +1,3 @@
-export const runtime = 'edge'
 
 import { contactSchema } from '@/lib/schemas'
 import { sendContactEmail } from '@/lib/resend'
