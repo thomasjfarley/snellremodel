@@ -15,7 +15,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   name: 'Snel Remodeling Services',
   description:
-    'Professional painting, remodeling, and drywall services. Licensed and insured contractor.',
+    'Professional remodeling, restoration, and demolition services. Licensed and insured contractor.',
   url: 'https://snelremodeling.com',
   telephone: process.env.NEXT_PUBLIC_PHONE,
   email: process.env.NEXT_PUBLIC_EMAIL,
@@ -24,9 +24,9 @@ const localBusinessSchema = {
     '@type': 'OfferCatalog',
     name: 'Remodeling Services',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Painting' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Remodeling' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Drywall' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Remodel' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Restore' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Demo' } },
     ],
   },
 }

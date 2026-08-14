@@ -11,7 +11,7 @@ export default function Footer() {
               Snel <span className="text-accent">Remodeling Services</span>
             </h2>
             <p className="text-white-50 small mb-3">
-              Quality painting, remodeling, and drywall services.
+              Quality remodeling, restoration, and demolition services.
               Licensed, insured, and dedicated to exceptional craftsmanship.
             </p>
             <p className="text-white-50 small mb-1">
@@ -28,9 +28,9 @@ export default function Footer() {
           <div className="col-6 col-lg-2">
             <h3 className="h6 fw-semibold text-uppercase ls-1 text-white-50 mb-3">Services</h3>
             <ul className="list-unstyled mb-0 small">
-              <li className="mb-2"><Link href="/services/painting">Painting</Link></li>
-              <li className="mb-2"><Link href="/services/remodeling">Remodeling</Link></li>
-              <li className="mb-2"><Link href="/services/drywall">Drywall</Link></li>
+              <li className="mb-2"><Link href="/services/remodel">Remodel</Link></li>
+              <li className="mb-2"><Link href="/services/restore">Restore</Link></li>
+              <li className="mb-2"><Link href="/services/demo">Demo</Link></li>
               <li><Link href="/services">All Services</Link></li>
             </ul>
           </div>

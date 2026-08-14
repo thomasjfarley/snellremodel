@@ -1,60 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import BookingCTA from '@/components/home/BookingCTA'
+import { serviceCategories, servicesIndexMetadata } from '@/lib/service-content'
 
-export const metadata: Metadata = {
-  title: 'Services',
-  description:
-    "Explore Snel Remodeling Services' professional services: expert painting, remodeling, and drywall. Licensed and insured contractor serving Salt Lake County, UT.",
-}
-
-const services = [
-  {
-    href: '/services/painting',
-    icon: 'bi-brush',
-    title: 'Painting',
-    badge: 'Our Specialty',
-    description:
-      "Interior and exterior painting, cabinet refinishing, color consultation, and more. Our specialty — done right every time.",
-    items: [
-      'Interior Painting',
-      'Exterior Painting',
-      'Cabinet Painting',
-      'Color Consultation',
-      'Trim & Accent Walls',
-    ],
-  },
-  {
-    href: '/services/remodeling',
-    icon: 'bi-house-heart',
-    title: 'Remodeling',
-    badge: null,
-    description:
-      "Kitchens, bathrooms, basements, and beyond — full gut renovations or targeted upgrades tailored to your vision.",
-    items: [
-      'Kitchen Remodels',
-      'Bathroom Remodels',
-      'Basement Finishing',
-      'Layout Changes',
-      'Cabinet Work & Countertops',
-    ],
-  },
-  {
-    href: '/services/drywall',
-    icon: 'bi-grid-3x3',
-    title: 'Drywall',
-    badge: null,
-    description:
-      'Professional drywall installation, repair, and finishing. Seamless results that stand the test of time.',
-    items: [
-      'Drywall Installation',
-      'Crack & Hole Repair',
-      'Water Damage Repair',
-      'Texture Matching',
-      'Skim Coating',
-    ],
-  },
-]
+export const metadata: Metadata = servicesIndexMetadata
 
 export default function ServicesPage() {
   return (
@@ -66,20 +15,17 @@ export default function ServicesPage() {
               <p className="text-accent fw-semibold text-uppercase ls-1 small mb-2">What We Offer</p>
               <h1 className="h1 fw-bold text-navy mb-3">Our Services</h1>
               <p className="text-muted fs-5">
-                Snel Remodeling Services handles painting, remodeling, and drywall with the same
-                commitment to quality on every project — big or small.
+                Explore our Remodel, Restore, and Demo categories to find the right fit for your
+                project in Salt Lake County.
               </p>
             </div>
           </div>
 
           <div className="row g-4">
-            {services.map((svc) => (
+            {serviceCategories.map((svc) => (
               <div key={svc.href} className="col-lg-4">
                 <div className="card h-100 border-0 shadow-sm service-card p-1">
                   <div className="card-body p-4">
-                    {svc.badge && (
-                      <span className="badge bg-accent text-dark small mb-3">{svc.badge}</span>
-                    )}
                     <div className="service-icon bg-navy bg-opacity-10 mb-4">
                       <i className={`bi ${svc.icon} fs-4 text-navy`} />
                     </div>
@@ -94,7 +40,7 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                     <Link href={svc.href} className="btn btn-primary w-100">
-                      Learn More <i className="bi bi-arrow-right ms-1" />
+                      View Services <i className="bi bi-arrow-right ms-1" />
                     </Link>
                   </div>
                 </div>

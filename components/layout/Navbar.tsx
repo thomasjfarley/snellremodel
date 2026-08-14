@@ -8,9 +8,9 @@ const navLinks: NavItem[] = [
   {
     label: 'Services',
     children: [
-      { href: '/services/painting', label: 'Painting' },
-      { href: '/services/remodeling', label: 'Remodeling' },
-      { href: '/services/drywall', label: 'Drywall' },
+      { href: '/services/remodel', label: 'Remodel' },
+      { href: '/services/restore', label: 'Restore' },
+      { href: '/services/demo', label: 'Demo' },
       { href: '/services', label: 'All Services' },
     ],
   },

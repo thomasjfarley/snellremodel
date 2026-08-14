@@ -3,27 +3,27 @@ import Image from 'next/image'
 
 const services = [
   {
-    href: '/services/painting',
-    img: '/images/painting-interior.jpg',
-    title: 'Painting',
-    description:
-      'Interior and exterior painting done right. From walls to cabinets, we deliver a flawless finish — on time and on budget.',
-    badge: 'Our Specialty',
-  },
-  {
-    href: '/services/remodeling',
+    href: '/services/remodel',
     img: '/images/kitchen-remodel.jpg',
-    title: 'Remodeling',
+    title: 'Remodel',
     description:
-      'Kitchens, bathrooms, basements, and more — full gut renovations or targeted upgrades tailored to your vision and budget.',
+      'Kitchen, bathroom, basement, bedroom, and flooring updates tailored to your space, budget, and goals.',
     badge: null,
   },
   {
-    href: '/services/drywall',
-    img: '/images/drywall-construction.jpg',
-    title: 'Drywall',
+    href: '/services/restore',
+    img: '/images/painting-interior.jpg',
+    title: 'Restore',
     description:
-      'New installation, repairs, and seamless texture matching. Smooth walls that make a difference in every room.',
+      'Paint, drywall, and water damage restoration services that refresh and repair interior spaces.',
+    badge: 'Popular',
+  },
+  {
+    href: '/services/demo',
+    img: '/images/drywall-construction.jpg',
+    title: 'Demo',
+    description:
+      'Selective interior demolition, debris removal, and site prep that gets your remodel started cleanly.',
     badge: null,
   },
 ]
