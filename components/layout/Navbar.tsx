@@ -17,22 +17,16 @@ const serviceGroups = [
   {
     label: 'Restore',
     items: [
-      { href: '/services/restore/paint',        label: 'Paint' },
-      { href: '/services/restore/drywall',       label: 'Drywall' },
-      { href: '/services/restore/water-damage',  label: 'Water Damage' },
+      { href: '/services/restore/paint',       label: 'Paint' },
+      { href: '/services/restore/drywall',     label: 'Drywall' },
+      { href: '/services/restore/water-damage',label: 'Water Damage' },
     ],
   },
 ]
 
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
-]
-
 export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mobileOpenGroup, setMobileOpenGroup] = useState<string | null>(null)
 
   return (
     <header>
@@ -61,76 +55,79 @@ export default function Navbar() {
                 <Link href="/" className="nav-link text-white">Home</Link>
               </li>
 
-              {/* Services mega-menu */}
-              <li className="nav-item sr-mega-wrap">
+              {/* Services dropdown */}
+              <li className="nav-item sr-flyout-root">
                 <button
                   className="nav-link dropdown-toggle btn btn-link text-white border-0 bg-transparent p-0 px-lg-2 py-2"
-                  aria-expanded="false"
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  aria-expanded={mobileServicesOpen}
                 >
                   Services
                 </button>
 
-                {/* Desktop mega menu */}
-                <div className="sr-mega-menu shadow">
-                  <div className="sr-mega-inner">
-                    {serviceGroups.map((group) => (
-                      <div key={group.label} className="sr-mega-col">
-                        <p className="sr-mega-heading">{group.label}</p>
-                        <ul className="list-unstyled mb-0">
-                          {group.items.map((item) => (
-                            <li key={item.href}>
-                              <Link href={item.href} className="sr-mega-link">
-                                {item.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                    <div className="sr-mega-col sr-mega-col--solo">
-                      <Link href="/services/demo" className="sr-mega-link fw-semibold">
-                        <i className="bi bi-hammer me-2" />Demo
-                      </Link>
-                      <Link href="/services" className="sr-mega-link text-accent mt-2">
-                        <i className="bi bi-grid me-2" />All Services
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                {/* Desktop flyout — top-level */}
+                <ul className="sr-flyout-menu shadow">
+                  {serviceGroups.map((group) => (
+                    <li key={group.label} className="sr-flyout-item sr-flyout-item--parent">
+                      <span className="sr-flyout-link d-flex align-items-center justify-content-between">
+                        {group.label}
+                        <i className="bi bi-chevron-right ms-3 small" />
+                      </span>
+                      {/* Desktop sub-flyout */}
+                      <ul className="sr-flyout-menu sr-flyout-menu--sub shadow">
+                        {group.items.map((item) => (
+                          <li key={item.href} className="sr-flyout-item">
+                            <Link href={item.href} className="sr-flyout-link">{item.label}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                  <li className="sr-flyout-item">
+                    <Link href="/services/demo" className="sr-flyout-link">Demo</Link>
+                  </li>
+                </ul>
 
                 {/* Mobile accordion */}
                 {mobileServicesOpen && (
                   <div className="d-lg-none ps-3 pb-2">
                     {serviceGroups.map((group) => (
-                      <div key={group.label} className="mb-2">
-                        <p className="text-accent small fw-semibold text-uppercase mb-1" style={{ letterSpacing: '0.08em' }}>
+                      <div key={group.label} className="mb-1">
+                        <button
+                          className="btn btn-link text-white-50 text-decoration-none small fw-semibold text-uppercase p-0 py-1 d-flex align-items-center gap-2"
+                          style={{ letterSpacing: '0.08em', fontSize: '0.72rem' }}
+                          onClick={() => setMobileOpenGroup(mobileOpenGroup === group.label ? null : group.label)}
+                        >
+                          <i className={`bi bi-chevron-${mobileOpenGroup === group.label ? 'down' : 'right'} small`} />
                           {group.label}
-                        </p>
-                        {group.items.map((item) => (
-                          <Link key={item.href} href={item.href} className="d-block text-white-50 small py-1 text-decoration-none">
-                            {item.label}
-                          </Link>
-                        ))}
+                        </button>
+                        {mobileOpenGroup === group.label && (
+                          <div className="ps-3">
+                            {group.items.map((item) => (
+                              <Link key={item.href} href={item.href} className="d-block text-white-50 small py-1 text-decoration-none">
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     ))}
-                    <div className="mt-2">
-                      <Link href="/services/demo" className="d-block text-white small py-1 text-decoration-none fw-semibold">
-                        Demo
-                      </Link>
-                      <Link href="/services" className="d-block text-accent small py-1 text-decoration-none">
-                        All Services
-                      </Link>
-                    </div>
+                    <Link href="/services/demo" className="d-block text-white small py-1 text-decoration-none fw-semibold mt-1">
+                      Demo
+                    </Link>
                   </div>
                 )}
               </li>
 
-              {navLinks.slice(1).map((link) => (
-                <li key={link.href} className="nav-item">
-                  <Link href={link.href} className="nav-link text-white">{link.label}</Link>
-                </li>
-              ))}
+              <li className="nav-item">
+                <Link href="/gallery" className="nav-link text-white">Gallery</Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/about" className="nav-link text-white">About</Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/contact" className="nav-link text-white">Contact</Link>
+              </li>
             </ul>
 
             <Link href="/book" className="btn btn-accent ms-lg-3 mt-3 mt-lg-0 px-4">
@@ -142,4 +139,5 @@ export default function Navbar() {
     </header>
   )
 }
+
 
