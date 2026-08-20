@@ -36,11 +36,10 @@ export default function FeaturedWork() {
                   className="object-fit-cover"
                 />
                 <div
-                  className="position-absolute top-0 start-0 m-2 d-flex align-items-center gap-2"
-                  style={{ zIndex: 2 }}
+                  style={{ position: 'absolute', top: 8, left: 8, zIndex: 2, width: 'auto', height: 'auto', display: 'flex', alignItems: 'center', gap: '6px' }}
                 >
                   <span
-                    className="px-2 py-1 text-white small fw-medium rounded"
+                    className="text-white small fw-medium rounded px-2 py-1"
                     style={{ background: 'rgba(26,46,68,0.65)' }}
                   >
                     {p.label}
