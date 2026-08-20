@@ -35,16 +35,16 @@ export default function FeaturedWork() {
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-fit-cover"
                 />
-                {p.badge && (
-                  <div className="position-absolute top-0 start-0 m-2" style={{ zIndex: 2 }}>
-                    <span className="badge bg-accent text-dark small">{p.badge}</span>
-                  </div>
-                )}
                 <div
-                  className="position-absolute bottom-0 start-0 end-0 px-2 py-1 d-flex align-items-center gap-2"
-                  style={{ background: 'rgba(26,46,68,0.65)', zIndex: 2 }}
+                  className="position-absolute top-0 start-0 m-2 d-flex align-items-center gap-2"
+                  style={{ zIndex: 2 }}
                 >
-                  <span className="text-white small fw-medium">{p.label}</span>
+                  <span
+                    className="px-2 py-1 text-white small fw-medium rounded"
+                    style={{ background: 'rgba(26,46,68,0.65)' }}
+                  >
+                    {p.label}
+                  </span>
                   {p.badge && (
                     <span className="badge bg-accent text-dark" style={{ fontSize: '0.65rem' }}>{p.badge}</span>
                   )}
