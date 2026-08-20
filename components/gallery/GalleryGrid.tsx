@@ -246,10 +246,10 @@ const projects: Project[] = [
     title: 'Bathroom Remodel',
     category: 'Remodel',
     city: 'Millcreek',
-    stage: 'After',
-    desc: 'Finished bathroom remodel with updated surfaces and fixtures.',
+    stage: 'During',
+    desc: 'Bathroom remodel in progress with work underway.',
     img: '/images/bathroom-remodel-millcreek-after.jpg',
-    alt: 'Finished bathroom remodel in Millcreek, UT',
+    alt: 'Bathroom remodel in progress in Millcreek, UT',
   },
   {
     title: 'Bathroom Remodel',
