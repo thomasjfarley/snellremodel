@@ -11,21 +11,34 @@ const inter = Inter({ subsets: ['latin'] })
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'HomeAndConstructionBusiness',
   name: 'Snel Remodeling Services',
   description:
-    'Professional remodeling, restoration, and demolition services. Licensed and insured contractor.',
+    'Professional painting, remodeling, and drywall services in Salt Lake City, Utah. Licensed and insured contractor.',
   url: 'https://snelremodeling.com',
   telephone: process.env.NEXT_PUBLIC_PHONE ?? '(801) 981-9977',
   email: process.env.NEXT_PUBLIC_EMAIL,
   priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Salt Lake City',
+    addressRegion: 'UT',
+    addressCountry: 'US',
+  },
+  areaServed: [
+    'Salt Lake City', 'Sandy', 'Draper', 'Murray', 'West Jordan',
+    'South Jordan', 'Herriman', 'Riverton', 'Taylorsville', 'Millcreek',
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Remodeling Services',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Remodel' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Restore' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Demo' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Interior Painting' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Exterior Painting' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Kitchen Remodeling' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bathroom Remodeling' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Drywall Repair' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Water Damage Restoration' } },
     ],
   },
 }
@@ -37,7 +50,7 @@ export const metadata: Metadata = {
     template: '%s | Snel Remodeling Services',
   },
   description:
-    'Professional painting, remodeling, and drywall services. Licensed and insured contractor. Get a free estimate today.',
+    'Professional painting, remodeling, and drywall services in Salt Lake City, Utah. Licensed and insured contractor. Free estimates — call today.',
   keywords: [
     'painting contractor',
     'home remodel',
@@ -64,6 +77,7 @@ export const metadata: Metadata = {
       'Professional painting, remodeling, and drywall services. Get a free estimate today.',
   },
   robots: { index: true, follow: true },
+  alternates: { canonical: 'https://snelremodeling.com' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

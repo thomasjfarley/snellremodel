@@ -58,14 +58,15 @@ export default function Footer() {
               </li>
               <li className="mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-envelope-fill text-accent" />
-                <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
-                  {process.env.NEXT_PUBLIC_EMAIL ?? 'snelremodeling@gmail.com'}
+                <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL ?? 'snelremodeling@gmail.com'}`}>
+                  Send Email
                 </a>
               </li>
-              <li className="d-flex align-items-start gap-2">
+              <li className="mb-2 d-flex align-items-start gap-2">
                 <i className="bi bi-geo-alt-fill text-accent mt-1" />
                 <span className="text-white-50">
-                  Serving {process.env.NEXT_PUBLIC_SERVICE_AREA ?? 'Salt Lake County, UT'}
+                  Salt Lake City, UT<br />
+                  <small>Serving Salt Lake County &amp; surrounding areas</small>
                 </span>
               </li>
             </ul>
