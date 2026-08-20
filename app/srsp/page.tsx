@@ -2,6 +2,7 @@ import { getCloudflareContext } from '@opennextjs/cloudflare'
 import { redirect } from 'next/navigation'
 import ContactQueue from '@/components/portal/ContactQueue'
 import SignOutButton from '@/components/portal/SignOutButton'
+import PushNotificationButton from '@/components/portal/PushNotificationButton'
 import { isPortalAuthenticated } from '@/lib/portal-auth'
 import type { PortalContact } from '@/components/portal/ContactCard'
 
@@ -41,6 +42,7 @@ export default async function PortalPage() {
             <h1 className="h4 fw-bold mb-0 text-accent">Snel Portal</h1>
           </div>
           <div className="d-flex gap-2 flex-shrink-0">
+            <PushNotificationButton />
             <a href="/srsp/settings" className="btn btn-outline-light btn-sm">Settings</a>
             <SignOutButton />
           </div>

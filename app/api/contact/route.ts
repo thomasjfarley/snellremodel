@@ -1,6 +1,7 @@
 import { getCloudflareContext } from '@opennextjs/cloudflare'
 import { contactSchema } from '@/lib/schemas'
 import { sendContactEmail } from '@/lib/resend'
+import { sendPushNotifications } from '@/lib/push'
 
 export async function POST(request: Request) {
   let body: unknown
@@ -37,6 +38,14 @@ export async function POST(request: Request) {
     } catch (err) {
       console.warn('[/api/contact] D1 insert failed:', err)
     }
+
+    // Fire push notification to Travis (non-blocking)
+    const serviceName = result.data.service ?? 'General'
+    sendPushNotifications({
+      title: '📋 New Contact Request',
+      body: `${result.data.name} · ${serviceName}`,
+      url: '/srsp',
+    }).catch(() => {})
 
     await sendContactEmail(result.data)
     return Response.json({ success: true })
