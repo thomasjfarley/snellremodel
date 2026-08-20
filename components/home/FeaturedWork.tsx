@@ -2,10 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const projects = [
-  { label: 'Interior Painting', img: '/images/painting-interior.jpg' },
-  { label: 'Remodeling',        img: '/images/garage-remodel-sandy-after.jpg' },
-  { label: 'Cabinet Painting',  img: '/images/cabinet-painting-south-jordan-after.jpg' },
-  { label: 'Drywall Finish',    img: '/images/drywall-repair-holladay-after.jpg' },
+  { label: 'Painting', badge: 'Popular', img: '/images/painting-interior.jpg' },
+  { label: 'Remodeling',        badge: null,     img: '/images/garage-remodel-sandy-after.jpg' },
+  { label: 'Cabinet Painting',  badge: null,     img: '/images/cabinet-painting-south-jordan-after.jpg' },
+  { label: 'Drywall Finish',    badge: null,     img: '/images/drywall-repair-holladay-after.jpg' },
 ]
 
 export default function FeaturedWork() {
@@ -35,6 +35,11 @@ export default function FeaturedWork() {
                   sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-fit-cover"
                 />
+                {p.badge && (
+                  <div className="position-absolute top-0 start-0 m-2" style={{ zIndex: 1 }}>
+                    <span className="badge bg-accent text-dark small">{p.badge}</span>
+                  </div>
+                )}
                 <div
                   className="position-absolute bottom-0 start-0 end-0 px-2 py-1"
                   style={{ background: 'rgba(26,46,68,0.65)' }}

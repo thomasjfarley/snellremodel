@@ -5,6 +5,7 @@ const services = [
   {
     href: '/services/remodel',
     img: '/images/bathroom-remodel-cottonwood-heights-after.jpg',
+    title: 'Remodel',
     description:
       'Kitchen, bathroom, basement, bedroom, and flooring updates tailored to your space, budget, and goals.',
     badge: null,
@@ -15,7 +16,7 @@ const services = [
     title: 'Restore',
     description:
       'Paint, drywall, and water damage restoration services that refresh and repair interior spaces.',
-    badge: 'Popular',
+    badge: null,
   },
   {
     href: '/services/demo',
