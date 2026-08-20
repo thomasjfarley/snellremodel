@@ -390,10 +390,10 @@ const projects: Project[] = [
     title: 'Laundry Room Remodel',
     category: 'Remodel',
     city: 'Taylorsville',
-    stage: 'After',
-    desc: 'Finished laundry room remodel with a cleaner, more usable layout.',
+    stage: 'During',
+    desc: 'Laundry room remodel in progress with new layout taking shape.',
     img: '/images/laundry-room-remodel-taylorsville-after.jpg',
-    alt: 'Completed laundry room remodel in Taylorsville, UT',
+    alt: 'Laundry room remodel in progress in Taylorsville, UT',
   },
   {
     title: 'Laundry Room Remodel',
