@@ -78,7 +78,7 @@ export default function Navbar() {
                 </button>
 
                 {/* Desktop flyout — top-level */}
-                <ul className="sr-flyout-menu shadow" style={{ display: desktopOpen ? 'block' : undefined }}>
+                <ul className="sr-flyout-menu shadow" style={{ display: desktopOpen ? 'block' : 'none' }}>
                   {serviceGroups.map((group) => (
                     <li key={group.label} className="sr-flyout-item sr-flyout-item--parent">
                       <span className="sr-flyout-link d-flex align-items-center justify-content-between">
