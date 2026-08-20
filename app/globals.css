@@ -108,7 +108,6 @@ footer a:hover { color: var(--sr-gold) !important; }
   z-index: 1050;
 }
 
-.sr-flyout-root:hover > .sr-flyout-menu,
 .sr-flyout-root:focus-within > .sr-flyout-menu { display: block; }
 
 .sr-flyout-item { position: relative; }

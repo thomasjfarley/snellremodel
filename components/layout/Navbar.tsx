@@ -26,6 +26,7 @@ const serviceGroups = [
 
 export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [desktopOpen, setDesktopOpen] = useState(false)
 
   const closeMenu = useCallback(() => {
     setMobileServicesOpen(false)
@@ -64,7 +65,10 @@ export default function Navbar() {
               </li>
 
               {/* Services dropdown */}
-              <li className="nav-item sr-flyout-root">
+              <li className="nav-item sr-flyout-root"
+                onMouseEnter={() => setDesktopOpen(true)}
+                onMouseLeave={() => setDesktopOpen(false)}
+              >
                 <button
                   className="nav-link dropdown-toggle btn btn-link text-white border-0 bg-transparent p-0 px-lg-2 py-2"
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
@@ -74,7 +78,7 @@ export default function Navbar() {
                 </button>
 
                 {/* Desktop flyout — top-level */}
-                <ul className="sr-flyout-menu shadow">
+                <ul className="sr-flyout-menu shadow" style={{ display: desktopOpen ? 'block' : undefined }}>
                   {serviceGroups.map((group) => (
                     <li key={group.label} className="sr-flyout-item sr-flyout-item--parent">
                       <span className="sr-flyout-link d-flex align-items-center justify-content-between">
@@ -85,14 +89,14 @@ export default function Navbar() {
                       <ul className="sr-flyout-menu sr-flyout-menu--sub shadow">
                         {group.items.map((item) => (
                           <li key={item.href} className="sr-flyout-item">
-                            <Link href={item.href} className="sr-flyout-link" onClick={() => (document.activeElement as HTMLElement)?.blur()}>{item.label}</Link>
+                            <Link href={item.href} className="sr-flyout-link" onClick={() => setDesktopOpen(false)}>{item.label}</Link>
                           </li>
                         ))}
                       </ul>
                     </li>
                   ))}
                   <li className="sr-flyout-item">
-                    <Link href="/services/demo" className="sr-flyout-link" onClick={() => (document.activeElement as HTMLElement)?.blur()}>Demo</Link>
+                    <Link href="/services/demo" className="sr-flyout-link" onClick={() => setDesktopOpen(false)}>Demo</Link>
                   </li>
                 </ul>
 
