@@ -11,6 +11,14 @@ async function getDB(): Promise<D1Database | undefined> {
   }
 }
 
+// GET /api/srsp/setup — check if portal is already configured
+export async function GET() {
+  const db = await getDB()
+  if (!db) return Response.json({ configured: false })
+  const existing = await db.prepare('SELECT value FROM settings WHERE key = ?').bind('password_hash').first()
+  return Response.json({ configured: !!existing })
+}
+
 // POST /api/srsp/setup — set initial password (only works if no password exists yet)
 export async function POST(request: Request) {
   let body: { password?: string }

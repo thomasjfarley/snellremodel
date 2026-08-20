@@ -12,9 +12,10 @@ export default function SetupPage() {
 
   useEffect(() => {
     // Check if portal is already configured; redirect to login if so
-    fetch('/api/srsp/setup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: '' }) })
+    fetch('/api/srsp/setup')
       .then(async (res) => {
-        if (res.status === 409) {
+        const data = await res.json() as { configured: boolean }
+        if (data.configured) {
           router.replace('/srsp/login')
         } else {
           setStatus('idle')
