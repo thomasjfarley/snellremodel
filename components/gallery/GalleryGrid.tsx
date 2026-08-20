@@ -281,11 +281,11 @@ const projects: Project[] = [
   {
     title: 'Basement Remodel',
     category: 'Remodel',
-    city: 'Taylorsville',
+    city: 'West Jordan',
     stage: 'Before',
     desc: 'Unfinished basement before the remodel project began.',
     img: '/images/basement-remodel-taylorsville-after.jpg',
-    alt: 'Unfinished basement before remodel in Taylorsville, UT',
+    alt: 'Unfinished basement before remodel in West Jordan, UT',
   },
   {
     title: 'Garage Remodel',
