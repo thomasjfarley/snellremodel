@@ -10,4 +10,4 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "snelremodel-contacts"
-database_id = "PLACEHOLDER_REPLACE_AFTER_CREATION"
+database_id = "a7278e26-c9b7-4ac2-8e40-e211d2cdd9b7"
