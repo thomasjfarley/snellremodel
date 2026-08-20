@@ -74,16 +74,6 @@ export default function ContactPage() {
                   </div>
                 </li>
               </ul>
-
-              <div className="card border-0 bg-light-warm p-4 mt-4">
-                <p className="fw-bold text-navy mb-1 small">Ready for a free estimate?</p>
-                <p className="text-muted small mb-3">
-                  Send your project details and Travis will follow up during your preferred contact window.
-                </p>
-                <a href="/contact" className="btn btn-accent btn-sm">
-                  Get a Free Estimate
-                </a>
-              </div>
             </div>
 
             {/* Form */}
