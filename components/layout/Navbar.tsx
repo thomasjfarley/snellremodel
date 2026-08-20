@@ -85,14 +85,14 @@ export default function Navbar() {
                       <ul className="sr-flyout-menu sr-flyout-menu--sub shadow">
                         {group.items.map((item) => (
                           <li key={item.href} className="sr-flyout-item">
-                            <Link href={item.href} className="sr-flyout-link">{item.label}</Link>
+                            <Link href={item.href} className="sr-flyout-link" onClick={() => (document.activeElement as HTMLElement)?.blur()}>{item.label}</Link>
                           </li>
                         ))}
                       </ul>
                     </li>
                   ))}
                   <li className="sr-flyout-item">
-                    <Link href="/services/demo" className="sr-flyout-link">Demo</Link>
+                    <Link href="/services/demo" className="sr-flyout-link" onClick={() => (document.activeElement as HTMLElement)?.blur()}>Demo</Link>
                   </li>
                 </ul>
 
