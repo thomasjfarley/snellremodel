@@ -5,7 +5,7 @@ const projects = [
   { label: 'Painting', badge: 'Popular', img: '/images/painting-interior.jpg' },
   { label: 'Remodeling',        badge: null,     img: '/images/garage-remodel-sandy-after.jpg' },
   { label: 'Cabinet Painting',  badge: null,     img: '/images/cabinet-painting-south-jordan-after.jpg' },
-  { label: 'Drywall Finish',    badge: null,     img: '/images/drywall-repair-holladay-after.jpg' },
+  { label: 'Drywall Finish',    badge: null,     img: '/images/water-damage-repair-draper-final.jpg' },
 ]
 
 export default function FeaturedWork() {
@@ -36,13 +36,13 @@ export default function FeaturedWork() {
                   className="object-fit-cover"
                 />
                 {p.badge && (
-                  <div className="position-absolute top-0 start-0 m-2" style={{ zIndex: 1 }}>
+                  <div className="position-absolute top-0 start-0 m-2" style={{ zIndex: 2 }}>
                     <span className="badge bg-accent text-dark small">{p.badge}</span>
                   </div>
                 )}
                 <div
                   className="position-absolute bottom-0 start-0 end-0 px-2 py-1"
-                  style={{ background: 'rgba(26,46,68,0.65)' }}
+                  style={{ background: 'rgba(26,46,68,0.65)', zIndex: 2 }}
                 >
                   <span className="text-white small fw-medium">{p.label}</span>
                 </div>
