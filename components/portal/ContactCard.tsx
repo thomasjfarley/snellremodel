@@ -124,15 +124,15 @@ export default function ContactCard({ contact, onUpdated }: ContactCardProps) {
     <article className="card border-0 shadow-sm h-100">
       <div className="card-body p-4">
         <div className="d-flex justify-content-between align-items-start gap-3 mb-3">
-          <div>
+          <div className="min-w-0">
             <h2 className="h5 fw-bold text-navy mb-1">{contact.name}</h2>
-            <div className="d-flex flex-wrap gap-2 align-items-center">
+            <div className="d-flex flex-column flex-sm-row flex-wrap gap-1 gap-sm-2">
               {contact.phone && (
-                <a href={`tel:${contact.phone}`} className="text-decoration-none fw-semibold">
-                  {contact.phone}
+                <a href={`tel:${contact.phone}`} className="text-decoration-none fw-semibold fs-6">
+                  📞 {contact.phone}
                 </a>
               )}
-              <a href={`mailto:${contact.email}`} className="small text-muted text-decoration-none">
+              <a href={`mailto:${contact.email}`} className="small text-muted text-decoration-none text-truncate">
                 {contact.email}
               </a>
             </div>

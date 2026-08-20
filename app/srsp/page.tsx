@@ -35,12 +35,12 @@ export default async function PortalPage() {
   return (
     <section className="bg-light-warm min-vh-100 pb-5">
       <header className="bg-navy text-white py-3 shadow-sm">
-        <div className="container d-flex justify-content-between align-items-center gap-3">
+        <div className="container d-flex justify-content-between align-items-center gap-2 flex-wrap">
           <div>
             <p className="text-accent fw-semibold text-uppercase ls-1 small mb-1">Snel Portal</p>
             <h1 className="h4 fw-bold mb-0 text-accent">Snel Portal</h1>
           </div>
-          <div className="d-flex gap-2">
+          <div className="d-flex gap-2 flex-shrink-0">
             <a href="/srsp/settings" className="btn btn-outline-light btn-sm">Settings</a>
             <SignOutButton />
           </div>
