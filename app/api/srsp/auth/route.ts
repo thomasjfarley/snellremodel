@@ -48,7 +48,7 @@ export async function POST(request: Request) {
     secure: true,
     sameSite: 'strict',
     maxAge: 60 * 60 * 24 * 30,
-    path: '/srsp',
+    path: '/',
   })
 
   return Response.json({ ok: true })
