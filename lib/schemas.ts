@@ -13,8 +13,9 @@ export const bookingSchema = z.object({
 export const contactSchema = z.object({
   name: z.string().min(2, 'Name is required'),
   email: z.string().email('Please enter a valid email'),
-  phone: z.string().optional(),
+  phone: z.string().min(10, 'Please enter a valid phone number'),
   service: z.enum(['remodel', 'restore', 'demo', 'other', '']).optional(),
+  preferredContact: z.enum(['morning', 'afternoon', 'evening', 'anytime']).default('anytime'),
   message: z.string().min(10, 'Please include a message (minimum 10 characters)'),
 })
 

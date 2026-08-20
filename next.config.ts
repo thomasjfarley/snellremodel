@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/book',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
         source: '/services/remodeling',
         destination: '/services/remodel',
         permanent: true,

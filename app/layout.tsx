@@ -3,10 +3,9 @@ import { Inter } from 'next/font/google'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import './globals.css'
-import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
 import BootstrapClient from '@/components/BootstrapClient'
 import JsonLd from '@/components/JsonLd'
+import SiteChrome from '@/components/layout/SiteChrome'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,9 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="d-flex flex-column min-vh-100">
         <JsonLd data={localBusinessSchema as Record<string, unknown>} />
         <BootstrapClient />
-        <Navbar />
-        <main className="flex-grow-1">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   )

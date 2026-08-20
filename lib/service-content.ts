@@ -219,7 +219,7 @@ export const kitchenContent: ServiceDetailContent = {
   sectionTitle: 'Kitchen Remodeling Services',
   sectionDescription:
     'We handle targeted kitchen upgrades and full remodels with careful planning, clean execution, and durable finishes.',
-  ctaLabel: 'Schedule a Free Walkthrough',
+  ctaLabel: 'Get a Free Estimate',
   serviceItems: [
     { icon: 'bi-grid', title: 'Cabinet Installation', desc: 'New cabinets, refacing plans, and storage upgrades that improve function and keep the kitchen organized.', img: '/images/kitchen-cabinets.jpg' },
     { icon: 'bi-bounding-box', title: 'Countertop Upgrades', desc: 'Replace worn tops with durable surfaces sized, templated, and installed for a clean finished fit.', img: '/images/kitchen-modern.jpg' },
@@ -263,7 +263,7 @@ export const bathroomContent: ServiceDetailContent = {
   sectionTitle: 'Bathroom Remodeling Services',
   sectionDescription:
     'From compact hall baths to primary suites, we build bathroom remodels that improve comfort, storage, and long-term performance.',
-  ctaLabel: 'Schedule a Free Walkthrough',
+  ctaLabel: 'Get a Free Estimate',
   serviceItems: [
     { icon: 'bi-grid-3x3-gap', title: 'Tile Installation', desc: 'Floor, shower, and backsplash tile installed with straight lines, clean transitions, and durable setting materials.', img: '/images/bathroom-remodel.jpg' },
     { icon: 'bi-columns-gap', title: 'Vanity & Storage', desc: 'Replace dated vanities, mirrors, and storage so the room works better and looks more polished.', img: '/images/bathroom-remodel.jpg' },
@@ -307,7 +307,7 @@ export const basementContent: ServiceDetailContent = {
   sectionTitle: 'Basement Finishing Services',
   sectionDescription:
     'We help homeowners unlock more square footage with practical basement finishing built around comfort, access, and long-term use.',
-  ctaLabel: 'Schedule a Free Walkthrough',
+  ctaLabel: 'Get a Free Estimate',
   serviceItems: [
     { icon: 'bi-layout-three-columns', title: 'Framing & Layout', desc: 'Build rooms, storage zones, and open living areas with a layout that makes the basement feel intentional.', img: '/images/drywall-construction.jpg' },
     { icon: 'bi-shield-check', title: 'Insulation Planning', desc: 'Improve comfort with basement wall and ceiling prep that supports a more finished, livable environment.', img: '/images/drywall-construction.jpg' },
@@ -351,7 +351,7 @@ export const bedroomContent: ServiceDetailContent = {
   sectionTitle: 'Bedroom Remodeling Services',
   sectionDescription:
     'We remodel bedrooms to create better storage, smoother layouts, and cleaner finishes without overcomplicating the project.',
-  ctaLabel: 'Schedule a Free Walkthrough',
+  ctaLabel: 'Get a Free Estimate',
   serviceItems: [
     { icon: 'bi-door-closed', title: 'Closet Builds', desc: 'Build or rework closet storage so the room feels less cluttered and more functional.', img: '/images/painting-interior.jpg' },
     { icon: 'bi-arrows-angle-expand', title: 'Layout Adjustments', desc: 'Shift walls, openings, or room flow when a better layout makes the space more usable.', img: '/images/painting-room.jpg' },
@@ -395,7 +395,7 @@ export const flooringContent: ServiceDetailContent = {
   sectionTitle: 'Flooring Installation Services',
   sectionDescription:
     'We handle flooring upgrades room by room or as part of a larger remodel, always with attention to prep and finish details.',
-  ctaLabel: 'Schedule a Free Walkthrough',
+  ctaLabel: 'Get a Free Estimate',
   serviceItems: [
     { icon: 'bi-tree', title: 'Hardwood Flooring', desc: 'Install hardwood floors that bring warmth and long-term value to living spaces, bedrooms, and hallways.', img: '/images/kitchen-modern.jpg' },
     { icon: 'bi-grid', title: 'LVP Installation', desc: 'Luxury vinyl plank floors installed for durability, water resistance, and a clean modern finish.', img: '/images/kitchen-modern.jpg' },
@@ -571,7 +571,7 @@ export const demoContent: ServiceDetailContent = {
   sectionTitle: 'Demolition Services',
   sectionDescription:
     'We perform controlled interior demo work that clears the way for renovation while protecting the rest of your home.',
-  ctaLabel: 'Schedule a Free Walkthrough',
+  ctaLabel: 'Get a Free Estimate',
   serviceItems: [
     { icon: 'bi-house-dash', title: 'Interior Demo', desc: 'Remove walls, cabinets, flooring, and finishes that need to come out before remodeling can begin.', img: '/images/drywall-construction.jpg' },
     { icon: 'bi-scissors', title: 'Selective Demo', desc: 'Targeted demolition for kitchens, bathrooms, basements, and other spaces where only part of the room is changing.', img: '/images/drywall-install.jpg' },

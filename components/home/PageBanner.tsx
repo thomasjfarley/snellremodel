@@ -20,9 +20,9 @@ export default function PageBanner() {
               with precision and pride. Serving homeowners who expect the best.
             </p>
             <div className="d-flex gap-3 flex-wrap">
-              <Link href="/book" className="btn btn-accent btn-lg px-4">
-                <i className="bi bi-calendar-check me-2" />
-                Book a Free Walkthrough
+              <Link href="/contact" className="btn btn-accent btn-lg px-4">
+                <i className="bi bi-clipboard-check me-2" />
+                Get a Free Estimate
               </Link>
               <Link href="/gallery" className="btn btn-outline-light btn-lg px-4">
                 View Our Work

@@ -1,6 +1,6 @@
 import 'server-only'
 import { Resend } from 'resend'
-import type { BookingFormData, ContactFormData } from './schemas'
+import type { ContactFormData } from './schemas'
 
 function getClient() {
   const apiKey = process.env.RESEND_API_KEY
@@ -11,88 +11,74 @@ function getClient() {
 const FROM = process.env.RESEND_FROM_EMAIL ?? 'booking@snelremodeling.com'
 const CONTRACTOR = process.env.RESEND_CONTRACTOR_EMAIL ?? process.env.NEXT_PUBLIC_EMAIL ?? ''
 
-export async function sendBookingEmails(data: BookingFormData): Promise<void> {
-  const resend = getClient()
-  const serviceLabel = data.service.replace('-', ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+const serviceLabels: Record<NonNullable<ContactFormData['service']>, string> = {
+  remodel: 'Remodel',
+  restore: 'Restore',
+  demo: 'Demo',
+  other: 'Other / Not Sure',
+  '': 'Not specified',
+}
 
-  // Confirmation to customer
-  await resend.emails.send({
-    from: FROM,
-    to: data.email,
-    subject: `Walkthrough Confirmed — Snel Remodeling Services`,
-    html: `
-      <h2>Your walkthrough is confirmed!</h2>
-      <p>Hi ${data.name},</p>
-      <p>We have you scheduled for a free walkthrough. Here are the details:</p>
-      <table>
-        <tr><td><strong>Service:</strong></td><td>${serviceLabel}</td></tr>
-        <tr><td><strong>Date:</strong></td><td>${data.date}</td></tr>
-        <tr><td><strong>Time:</strong></td><td>${data.time}</td></tr>
-      </table>
-      ${data.notes ? `<p><strong>Your notes:</strong> ${data.notes}</p>` : ''}
-      <p>We will be in touch if anything changes. See you soon!</p>
-      <p>— Snel Remodeling Services</p>
-    `,
-  })
+const preferredContactLabels: Record<ContactFormData['preferredContact'], string> = {
+  morning: 'Morning (8am–12pm)',
+  afternoon: 'Afternoon (12pm–5pm)',
+  evening: 'Evening (5pm–8pm)',
+  anytime: 'Anytime',
+}
 
-  // Notification to contractor
-  if (CONTRACTOR) {
-    await resend.emails.send({
-      from: FROM,
-      to: CONTRACTOR,
-      subject: `New Walkthrough Booking — ${data.name} (${serviceLabel})`,
-      html: `
-        <h2>New booking received</h2>
-        <table>
-          <tr><td><strong>Name:</strong></td><td>${data.name}</td></tr>
-          <tr><td><strong>Email:</strong></td><td>${data.email}</td></tr>
-          <tr><td><strong>Phone:</strong></td><td>${data.phone}</td></tr>
-          <tr><td><strong>Service:</strong></td><td>${serviceLabel}</td></tr>
-          <tr><td><strong>Date:</strong></td><td>${data.date}</td></tr>
-          <tr><td><strong>Time:</strong></td><td>${data.time}</td></tr>
-          ${data.notes ? `<tr><td><strong>Notes:</strong></td><td>${data.notes}</td></tr>` : ''}
-        </table>
-      `,
-    })
-  }
+function escapeHtml(value: string) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;')
 }
 
 export async function sendContactEmail(data: ContactFormData): Promise<void> {
+  if (!CONTRACTOR) return
+
   const resend = getClient()
-  const serviceLabel = data.service
-    ? data.service.replace('-', ' ').replace(/\b\w/g, (c) => c.toUpperCase())
-    : 'Not specified'
+  const serviceLabel = serviceLabels[data.service ?? ''] ?? 'Not specified'
+  const preferredContactLabel = preferredContactLabels[data.preferredContact]
 
-  if (CONTRACTOR) {
-    await resend.emails.send({
-      from: FROM,
-      to: CONTRACTOR,
-      replyTo: data.email,
-      subject: `New Contact Message — ${data.name}`,
-      html: `
-        <h2>New contact form submission</h2>
-        <table>
-          <tr><td><strong>Name:</strong></td><td>${data.name}</td></tr>
-          <tr><td><strong>Email:</strong></td><td>${data.email}</td></tr>
-          ${data.phone ? `<tr><td><strong>Phone:</strong></td><td>${data.phone}</td></tr>` : ''}
-          <tr><td><strong>Service:</strong></td><td>${serviceLabel}</td></tr>
-        </table>
-        <h3>Message:</h3>
-        <p>${data.message.replace(/\n/g, '<br/>')}</p>
-      `,
-    })
-  }
-
-  // Auto-reply to sender
   await resend.emails.send({
     from: FROM,
-    to: data.email,
-    subject: `Thanks for reaching out — Snel Remodeling Services`,
+    to: CONTRACTOR,
+    replyTo: data.email,
+    subject: `New Walkthrough Request — ${data.name} (${serviceLabel})`,
     html: `
-      <p>Hi ${data.name},</p>
-      <p>Thanks for getting in touch! We received your message and will get back to you shortly.</p>
-      <p>In the meantime, feel free to call us at ${process.env.NEXT_PUBLIC_PHONE ?? '(425) 524-1379'}.</p>
-      <p>— Snel Remodeling Services</p>
+      <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #1f2937;">
+        <h2 style="margin-bottom: 16px; color: #1a2e44;">New walkthrough request</h2>
+        <table style="border-collapse: collapse; width: 100%; max-width: 640px;">
+          <tr>
+            <td style="padding: 8px 0; font-weight: 700; width: 180px;">Name</td>
+            <td style="padding: 8px 0;">${escapeHtml(data.name)}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: 700;">Phone</td>
+            <td style="padding: 8px 0;"><a href="tel:${escapeHtml(data.phone)}">${escapeHtml(data.phone)}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: 700;">Email</td>
+            <td style="padding: 8px 0;"><a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: 700;">Service</td>
+            <td style="padding: 8px 0;">${escapeHtml(serviceLabel)}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; font-weight: 700;">Preferred contact time</td>
+            <td style="padding: 8px 0;">${escapeHtml(preferredContactLabel)}</td>
+          </tr>
+        </table>
+        <div style="margin-top: 20px;">
+          <p style="margin: 0 0 8px; font-weight: 700;">Message</p>
+          <div style="padding: 16px; background: #f7f5f0; border-left: 4px solid #c8a254; border-radius: 6px;">
+            ${escapeHtml(data.message).replace(/\n/g, '<br />')}
+          </div>
+        </div>
+      </div>
     `,
   })
 }

@@ -131,8 +131,8 @@ export default function Navbar() {
               </li>
             </ul>
 
-            <Link href="/book" className="btn btn-accent ms-lg-3 mt-3 mt-lg-0 px-4">
-              Book a Walkthrough
+            <Link href="/contact" className="btn btn-accent ms-lg-3 mt-3 mt-lg-0 px-4">
+              Get a Free Estimate
             </Link>
           </div>
         </div>
@@ -140,5 +140,4 @@ export default function Navbar() {
     </header>
   )
 }
-
 

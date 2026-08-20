@@ -42,7 +42,7 @@ export default function Footer() {
               <li className="mb-2"><Link href="/about">About</Link></li>
               <li className="mb-2"><Link href="/gallery">Gallery</Link></li>
               <li className="mb-2"><Link href="/contact">Contact</Link></li>
-              <li><Link href="/book">Book a Walkthrough</Link></li>
+              <li><Link href="/contact">Get a Free Estimate</Link></li>
             </ul>
           </div>
 
@@ -69,8 +69,8 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
-            <Link href="/book" className="btn btn-accent btn-sm mt-4">
-              Book a Free Walkthrough
+            <Link href="/contact" className="btn btn-accent btn-sm mt-4">
+              Get a Free Estimate
             </Link>
           </div>
         </div>

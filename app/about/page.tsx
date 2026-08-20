@@ -130,8 +130,8 @@ export default function AboutPage() {
                 ))}
               </div>
               <div className="mt-5">
-                <Link href="/book" className="btn btn-accent btn-lg px-5">
-                  <i className="bi bi-calendar-check me-2" />Book a Free Walkthrough
+                <Link href="/contact" className="btn btn-accent btn-lg px-5">
+                  <i className="bi bi-clipboard-check me-2" />Get a Free Estimate
                 </Link>
               </div>
             </div>

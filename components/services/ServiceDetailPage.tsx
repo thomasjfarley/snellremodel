@@ -90,8 +90,8 @@ export default function ServiceDetailPage({
           </span>
           <h1 className="display-5 fw-bold mb-3">{title}</h1>
           <p className="text-white-50 fs-5 mb-4 col-lg-7">{description}</p>
-          <Link href="/book" className="btn btn-accent btn-lg px-4">
-            <i className="bi bi-calendar-check me-2" />
+          <Link href="/contact" className="btn btn-accent btn-lg px-4">
+            <i className="bi bi-clipboard-check me-2" />
             {ctaLabel}
           </Link>
         </div>

@@ -4,7 +4,7 @@ import ContactForm from '@/components/contact/ContactForm'
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Get in touch with Snel Remodeling Services. Request a free estimate, ask a question, or schedule a walkthrough. Serving Salt Lake County, UT.',
+    'Get in touch with Snel Remodeling Services. Request a free estimate, ask a question, or request a walkthrough. Serving Salt Lake County, UT.',
 }
 
 export default function ContactPage() {
@@ -76,18 +76,18 @@ export default function ContactPage() {
               </ul>
 
               <div className="card border-0 bg-light-warm p-4 mt-4">
-                <p className="fw-bold text-navy mb-1 small">Prefer to book directly?</p>
+                <p className="fw-bold text-navy mb-1 small">Ready for a free estimate?</p>
                 <p className="text-muted small mb-3">
-                  Use our online scheduler to pick a time that works for a free walkthrough.
+                  Send your project details and Travis will follow up during your preferred contact window.
                 </p>
-                <a href="/book" className="btn btn-accent btn-sm">
-                  Book a Walkthrough
+                <a href="/contact" className="btn btn-accent btn-sm">
+                  Get a Free Estimate
                 </a>
               </div>
             </div>
 
             {/* Form */}
-            <div className="col-lg-8">
+            <div className="col-lg-8" id="contact-form">
               <h2 className="h4 fw-bold text-navy mb-4">Send a Message</h2>
               <ContactForm />
             </div>

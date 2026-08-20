@@ -3,7 +3,17 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { contactSchema, type ContactFormData } from '@/lib/schemas'
+import { type z } from 'zod'
+import { contactSchema } from '@/lib/schemas'
+
+const preferredContactOptions = [
+  { value: 'morning', label: 'Morning (8am–12pm)' },
+  { value: 'afternoon', label: 'Afternoon (12pm–5pm)' },
+  { value: 'evening', label: 'Evening (5pm–8pm)' },
+  { value: 'anytime', label: 'Anytime' },
+] as const
+
+type ContactFormValues = z.input<typeof contactSchema>
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
@@ -13,11 +23,14 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ContactFormData>({
+  } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
+    defaultValues: {
+      preferredContact: 'anytime',
+    },
   })
 
-  async function onSubmit(data: ContactFormData) {
+  async function onSubmit(data: ContactFormValues) {
     setStatus('submitting')
     try {
       const res = await fetch('/api/contact', {
@@ -38,8 +51,8 @@ export default function ContactForm() {
       <div className="alert alert-success d-flex align-items-center gap-3 p-4" role="alert">
         <i className="bi bi-check-circle-fill fs-4 flex-shrink-0" />
         <div>
-          <p className="fw-bold mb-1">Message sent!</p>
-          <p className="mb-0 small">We will be in touch with you shortly.</p>
+          <p className="fw-bold mb-1">Request received!</p>
+          <p className="mb-0 small">Travis will reach out during your preferred contact window.</p>
         </div>
       </div>
     )
@@ -63,6 +76,20 @@ export default function ContactForm() {
         </div>
 
         <div className="col-sm-6">
+          <label htmlFor="contact-phone" className="form-label fw-medium">
+            Phone <span className="text-danger">*</span>
+          </label>
+          <input
+            id="contact-phone"
+            type="tel"
+            className={`form-control${errors.phone ? ' is-invalid' : ''}`}
+            placeholder="(425) 524-1379"
+            {...register('phone')}
+          />
+          {errors.phone && <div className="invalid-feedback">{errors.phone.message}</div>}
+        </div>
+
+        <div className="col-sm-6">
           <label htmlFor="contact-email" className="form-label fw-medium">
             Email <span className="text-danger">*</span>
           </label>
@@ -77,17 +104,6 @@ export default function ContactForm() {
         </div>
 
         <div className="col-sm-6">
-          <label htmlFor="contact-phone" className="form-label fw-medium">Phone</label>
-          <input
-            id="contact-phone"
-            type="tel"
-            className="form-control"
-            placeholder="(425) 524-1379"
-            {...register('phone')}
-          />
-        </div>
-
-        <div className="col-sm-6">
           <label htmlFor="contact-service" className="form-label fw-medium">Service Interest</label>
           <select id="contact-service" className="form-select" {...register('service')}>
             <option value="">Select a service…</option>
@@ -96,6 +112,26 @@ export default function ContactForm() {
             <option value="demo">Demo</option>
             <option value="other">Other / Not Sure</option>
           </select>
+        </div>
+
+        <div className="col-12">
+          <label htmlFor="contact-preferred" className="form-label fw-medium">
+            Preferred Contact Time
+          </label>
+          <select
+            id="contact-preferred"
+            className={`form-select${errors.preferredContact ? ' is-invalid' : ''}`}
+            {...register('preferredContact')}
+          >
+            {preferredContactOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          {errors.preferredContact && (
+            <div className="invalid-feedback">{errors.preferredContact.message}</div>
+          )}
         </div>
 
         <div className="col-12">
@@ -134,7 +170,7 @@ export default function ContactForm() {
               </>
             ) : (
               <>
-                <i className="bi bi-send me-2" />Send Message
+                <i className="bi bi-send me-2" />Request a Walkthrough
               </>
             )}
           </button>
