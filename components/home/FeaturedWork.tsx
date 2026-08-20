@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 const projects = [
   { label: 'Interior Painting', img: '/images/painting-interior.jpg' },
-  { label: 'Remodeling',        img: '/images/kitchen-remodel.jpg' },
-  { label: 'Cabinet Painting',  img: '/images/painting-roller.jpg' },
-  { label: 'Drywall Finish',    img: '/images/drywall-construction.jpg' },
+  { label: 'Remodeling',        img: '/images/garage-remodel-sandy-after.jpg' },
+  { label: 'Cabinet Painting',  img: '/images/cabinet-painting-south-jordan-after.jpg' },
+  { label: 'Drywall Finish',    img: '/images/drywall-repair-holladay-after.jpg' },
 ]
 
 export default function FeaturedWork() {

@@ -4,15 +4,14 @@ import Image from 'next/image'
 const services = [
   {
     href: '/services/remodel',
-    img: '/images/kitchen-remodel.jpg',
-    title: 'Remodel',
+    img: '/images/bathroom-remodel-cottonwood-heights-after.jpg',
     description:
       'Kitchen, bathroom, basement, bedroom, and flooring updates tailored to your space, budget, and goals.',
     badge: null,
   },
   {
     href: '/services/restore',
-    img: '/images/painting-interior.jpg',
+    img: '/images/exterior-paint-salt-lake-city-after.jpg',
     title: 'Restore',
     description:
       'Paint, drywall, and water damage restoration services that refresh and repair interior spaces.',
@@ -20,7 +19,7 @@ const services = [
   },
   {
     href: '/services/demo',
-    img: '/images/drywall-construction.jpg',
+    img: '/images/carport-conversion-bountiful-framing.jpg',
     title: 'Demo',
     description:
       'Selective interior demolition, debris removal, and site prep that gets your remodel started cleanly.',
