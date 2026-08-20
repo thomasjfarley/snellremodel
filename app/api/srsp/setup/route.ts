@@ -1,6 +1,6 @@
-import { cookies } from 'next/headers'
 import bcrypt from 'bcryptjs'
 import { getCloudflareContext } from '@opennextjs/cloudflare'
+import { cookies } from 'next/headers'
 
 async function getDB(): Promise<D1Database | undefined> {
   try {
@@ -11,6 +11,7 @@ async function getDB(): Promise<D1Database | undefined> {
   }
 }
 
+// POST /api/srsp/setup — set initial password (only works if no password exists yet)
 export async function POST(request: Request) {
   let body: { password?: string }
 
@@ -20,27 +21,22 @@ export async function POST(request: Request) {
     return Response.json({ error: 'Invalid request body' }, { status: 400 })
   }
 
-  if (!body.password) {
-    return Response.json({ error: 'Password required' }, { status: 400 })
+  if (!body.password || body.password.length < 8) {
+    return Response.json({ error: 'Password must be at least 8 characters' }, { status: 400 })
   }
 
   const db = await getDB()
+  if (!db) return Response.json({ error: 'Database unavailable' }, { status: 503 })
 
-  if (!db) {
-    return Response.json({ error: 'Database unavailable' }, { status: 503 })
+  const existing = await db.prepare('SELECT value FROM settings WHERE key = ?').bind('password_hash').first()
+  if (existing) {
+    return Response.json({ error: 'Portal already configured' }, { status: 409 })
   }
 
-  const row = await db.prepare('SELECT value FROM settings WHERE key = ?').bind('password_hash').first<{ value: string }>()
-
-  if (!row) {
-    return Response.json({ error: 'Portal not configured — visit /srsp/setup' }, { status: 503 })
-  }
-
-  const valid = await bcrypt.compare(body.password, row.value)
-
-  if (!valid) {
-    return Response.json({ error: 'Invalid password' }, { status: 401 })
-  }
+  const hash = await bcrypt.hash(body.password, 12)
+  await db.prepare(
+    "INSERT INTO settings (key, value, updated_at) VALUES (?, ?, datetime('now'))"
+  ).bind('password_hash', hash).run()
 
   const cookieStore = await cookies()
   cookieStore.set('srsp_auth', 'authenticated', {
@@ -51,11 +47,5 @@ export async function POST(request: Request) {
     path: '/srsp',
   })
 
-  return Response.json({ ok: true })
-}
-
-export async function DELETE() {
-  const cookieStore = await cookies()
-  cookieStore.delete('srsp_auth')
   return Response.json({ ok: true })
 }

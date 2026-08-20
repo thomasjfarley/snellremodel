@@ -40,7 +40,10 @@ export default async function PortalPage() {
             <p className="text-accent fw-semibold text-uppercase ls-1 small mb-1">Snel Portal</p>
             <h1 className="h4 fw-bold mb-0 text-accent">Snel Portal</h1>
           </div>
-          <SignOutButton />
+          <div className="d-flex gap-2">
+            <a href="/srsp/settings" className="btn btn-outline-light btn-sm">Settings</a>
+            <SignOutButton />
+          </div>
         </div>
       </header>
 
