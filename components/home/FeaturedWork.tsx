@@ -41,10 +41,13 @@ export default function FeaturedWork() {
                   </div>
                 )}
                 <div
-                  className="position-absolute bottom-0 start-0 end-0 px-2 py-1"
+                  className="position-absolute bottom-0 start-0 end-0 px-2 py-1 d-flex align-items-center gap-2"
                   style={{ background: 'rgba(26,46,68,0.65)', zIndex: 2 }}
                 >
                   <span className="text-white small fw-medium">{p.label}</span>
+                  {p.badge && (
+                    <span className="badge bg-accent text-dark" style={{ fontSize: '0.65rem' }}>{p.badge}</span>
+                  )}
                 </div>
               </div>
             </div>
