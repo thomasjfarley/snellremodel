@@ -53,7 +53,7 @@ export default function Footer() {
               <li className="mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-telephone-fill text-accent" />
                 <a href={`tel:${process.env.NEXT_PUBLIC_PHONE}`}>
-                  {process.env.NEXT_PUBLIC_PHONE ?? '(425) 524-1379'}
+                  {process.env.NEXT_PUBLIC_PHONE ?? '(801) 981-9977'}
                 </a>
               </li>
               <li className="mb-2 d-flex align-items-center gap-2">

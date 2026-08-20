@@ -83,7 +83,7 @@ export default function ContactForm() {
             id="contact-phone"
             type="tel"
             className={`form-control${errors.phone ? ' is-invalid' : ''}`}
-            placeholder="(425) 524-1379"
+            placeholder="Your phone number"
             {...register('phone')}
           />
           {errors.phone && <div className="invalid-feedback">{errors.phone.message}</div>}

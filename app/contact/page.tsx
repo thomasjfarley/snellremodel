@@ -39,7 +39,7 @@ export default function ContactPage() {
                         href={`tel:${process.env.NEXT_PUBLIC_PHONE}`}
                         className="text-muted text-decoration-none"
                       >
-                        {process.env.NEXT_PUBLIC_PHONE ?? '(425) 524-1379'}
+                        {process.env.NEXT_PUBLIC_PHONE ?? '(801) 981-9977'}
                       </a>
                     </div>
                   </div>

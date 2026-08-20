@@ -16,7 +16,7 @@ const localBusinessSchema = {
   description:
     'Professional remodeling, restoration, and demolition services. Licensed and insured contractor.',
   url: 'https://snelremodeling.com',
-  telephone: process.env.NEXT_PUBLIC_PHONE,
+  telephone: process.env.NEXT_PUBLIC_PHONE ?? '(801) 981-9977',
   email: process.env.NEXT_PUBLIC_EMAIL,
   priceRange: '$$',
   hasOfferCatalog: {
