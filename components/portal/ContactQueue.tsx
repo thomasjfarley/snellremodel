@@ -48,23 +48,22 @@ export default function ContactQueue({ initialContacts }: ContactQueueProps) {
   return (
     <>
       <div className="d-flex flex-wrap gap-2 mb-4">
-        <span className="badge text-bg-primary px-3 py-2">{counts.new} New</span>
-        <span className="badge text-bg-warning px-3 py-2">{counts.contacted} Contacted</span>
-        <span className="badge text-bg-success px-3 py-2">{counts.scheduled} Scheduled</span>
-        <span className="badge text-bg-secondary px-3 py-2">{counts.closed} Closed</span>
-      </div>
-
-      <div className="d-flex flex-wrap gap-2 mb-4">
-        {(Object.keys(filterLabels) as ContactStatusFilter[]).map((filter) => (
-          <button
-            key={filter}
-            type="button"
-            className={`btn btn-sm ${activeFilter === filter ? 'btn-primary' : 'btn-outline-primary'}`}
-            onClick={() => setActiveFilter(filter)}
-          >
-            {filterLabels[filter]}
-          </button>
-        ))}
+        {(Object.keys(filterLabels) as ContactStatusFilter[]).map((filter) => {
+          const count = filter === 'all' ? contacts.length : counts[filter as keyof typeof counts]
+          return (
+            <button
+              key={filter}
+              type="button"
+              className={`btn btn-sm ${activeFilter === filter ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => setActiveFilter(filter)}
+            >
+              {filterLabels[filter]}
+              <span className={`badge ms-2 ${activeFilter === filter ? 'bg-white text-primary' : 'bg-primary text-white'}`}>
+                {count}
+              </span>
+            </button>
+          )
+        })}
       </div>
 
       {filteredContacts.length === 0 ? (
