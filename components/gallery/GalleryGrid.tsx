@@ -514,7 +514,7 @@ const projects: Project[] = [
   },
   {
     title: 'Carport Conversion',
-    category: 'Demo',
+    category: 'Remodel',
     city: 'Bountiful',
     stage: 'Before',
     desc: 'Original carport before conversion and structural updates.',
@@ -523,7 +523,7 @@ const projects: Project[] = [
   },
   {
     title: 'Carport Conversion',
-    category: 'Demo',
+    category: 'Remodel',
     city: 'Bountiful',
     stage: 'During',
     desc: 'Framing stage of the carport conversion project.',
@@ -532,7 +532,7 @@ const projects: Project[] = [
   },
   {
     title: 'Carport Conversion',
-    category: 'Demo',
+    category: 'Remodel',
     city: 'Bountiful',
     stage: 'Progress',
     desc: 'Conversion progress after framing and structural work advanced.',
@@ -541,7 +541,7 @@ const projects: Project[] = [
   },
   {
     title: 'Carport Conversion',
-    category: 'Demo',
+    category: 'Remodel',
     city: 'Bountiful',
     stage: 'After',
     desc: 'Completed conversion with the project ready for everyday use.',
