@@ -13,11 +13,12 @@ export default function PageBanner() {
               LICENSED &amp; INSURED CONTRACTOR
             </span>
             <h1 className="display-5 fw-bold text-white mb-3 lh-sm">
-              Quality Craftsmanship<br />You Can Trust
+              Utah&apos;s Expert Painting,<br />Remodeling &amp; Drywall
             </h1>
             <p className="text-white-50 fs-5 mb-4 pe-lg-4">
-              Expert painting, remodeling, and drywall services delivered
-              with precision and pride. Serving homeowners who expect the best.
+              Professional painting, remodeling, and drywall services
+              delivered with precision and pride. Serving homeowners across
+              Salt Lake City, Utah who expect the best.
             </p>
             <div className="d-flex gap-3 flex-wrap">
               <Link href="/contact" className="btn btn-accent btn-lg px-4">
