@@ -21,16 +21,16 @@ export async function POST(request: Request) {
     return Response.json({ error: 'Invalid request body' }, { status: 400 })
   }
 
-  if (!body.password || body.password.length < 8) {
-    return Response.json({ error: 'Password must be at least 8 characters' }, { status: 400 })
-  }
-
   const db = await getDB()
   if (!db) return Response.json({ error: 'Database unavailable' }, { status: 503 })
 
   const existing = await db.prepare('SELECT value FROM settings WHERE key = ?').bind('password_hash').first()
   if (existing) {
     return Response.json({ error: 'Portal already configured' }, { status: 409 })
+  }
+
+  if (!body.password || body.password.length < 8) {
+    return Response.json({ error: 'Password must be at least 8 characters' }, { status: 400 })
   }
 
   const hash = await bcrypt.hash(body.password, 12)

@@ -1,14 +1,27 @@
 'use client'
 
-import { type FormEvent, useState } from 'react'
+import { type FormEvent, useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function SetupPage() {
   const router = useRouter()
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'error' | 'already-done'>('idle')
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'error' | 'checking'>('checking')
   const [errorMsg, setErrorMsg] = useState('')
+
+  useEffect(() => {
+    // Check if portal is already configured; redirect to login if so
+    fetch('/api/srsp/setup', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: '' }) })
+      .then(async (res) => {
+        if (res.status === 409) {
+          router.replace('/srsp/login')
+        } else {
+          setStatus('idle')
+        }
+      })
+      .catch(() => setStatus('idle'))
+  }, [router])
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -35,7 +48,7 @@ export default function SetupPage() {
       })
 
       if (response.status === 409) {
-        setStatus('already-done')
+        router.replace('/srsp/login')
         return
       }
 
@@ -51,22 +64,11 @@ export default function SetupPage() {
     }
   }
 
-  if (status === 'already-done') {
+  if (status === 'checking') {
     return (
-      <section className="bg-navy min-vh-100 d-flex align-items-center py-5">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
-              <div className="card border-0 shadow-lg">
-                <div className="card-body p-4 p-md-5 text-center">
-                  <p className="text-accent fw-semibold text-uppercase ls-1 small mb-2">Portal</p>
-                  <h1 className="h3 fw-bold text-navy mb-3">Already Configured</h1>
-                  <p className="text-muted mb-4">The portal password has already been set. Use the login page to sign in.</p>
-                  <a href="/srsp/login" className="btn btn-accent btn-lg w-100">Go to Login</a>
-                </div>
-              </div>
-            </div>
-          </div>
+      <section className="bg-navy min-vh-100 d-flex align-items-center justify-content-center">
+        <div className="spinner-border text-light" role="status">
+          <span className="visually-hidden">Checking…</span>
         </div>
       </section>
     )
